@@ -8,6 +8,8 @@ Install one language with `claude plugin install buddhist-skills-<language>@budd
 
 - **[ask-buddhistai](./skills/ask-buddhistai/SKILL.md)**: Find the right BuddhistAI skill for a Buddhist text task (table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation) in a given language. Use when the user asks which skill to use, or describes a Buddhist text task without naming a skill.
 
-## Language skills
+## Tibetan (`bo`)
 
-_None promoted yet._
+| Skill | Task | Benchmark | Score | Version |
+| --- | --- | --- | --- | --- |
+| [toc-extraction-tibetan](./skills/toc-extraction-tibetan/SKILL.md) | toc-extraction | toc-extraction/bo@1.0.0 | 0.893 structure_f1 (mean of Claude Haiku 5.5 0.823 and Sonnet 5.5 0.962) | 1.0.0 |

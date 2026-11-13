@@ -21,7 +21,7 @@ These are the task IDs defined in https://github.com/BuddhistAI/buddhist-benchma
 - `text-commentary-alignment`: link each passage of a root text to the commentary passages that explain it.
 - `translation` and its stages: segmentation, term extraction, draft translation, review.
 
-No skill is promoted yet for any task. Say so plainly, and point the user to the drafts and leaderboards in the two repos above.
+Promoted skills so far: `toc-extraction-tibetan`. For any other task and language, no skill is promoted yet: say so plainly, and point the user to the drafts and leaderboards in the two repos above.
 
 ## Shared resources
 

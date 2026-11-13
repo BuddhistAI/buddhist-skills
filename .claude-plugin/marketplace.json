@@ -17,6 +17,24 @@
         "buddhist-texts"
       ],
       "skills": [
+        "./skills/ask-buddhistai",
+        "./skills/toc-extraction-tibetan"
+      ]
+    },
+    {
+      "name": "buddhist-skills-tibetan",
+      "source": "./",
+      "strict": false,
+      "description": "BuddhistAI skills for Tibetan texts, plus the language-neutral ones.",
+      "category": "productivity",
+      "keywords": [
+        "buddhism",
+        "buddhist-texts",
+        "tibetan",
+        "bo"
+      ],
+      "skills": [
+        "./skills/toc-extraction-tibetan",
         "./skills/ask-buddhistai"
       ]
     }

@@ -23,7 +23,7 @@ Promoted skills in `skills/` are only changed by promotion, so every shipped ski
 
 ## From challenger to promoted skill
 
-1. Put your challenger in `drafts/<task>-<language>/<org>-<short-name>/SKILL.md` (or in your own repo). Its frontmatter `name` should already be the final skill name, for example `toc-extraction-tibetan`.
+1. Put your challenger in `drafts/<task>-<language>/<org>-<short-name>/SKILL.md` (or in your own repo). Its frontmatter `name` should already be the final skill name, for example `toc-extraction-tibetan`, and it needs `metadata.variant` and `metadata.version` (semver). Bump the version on every change.
 2. Run it on the task's benchmark set for your language and add your row to the leaderboard in buddhist-benchmarks, citing the exact commit of your skill.
 3. If it beats the current skill, open a PR here that copies it into `skills/<task>-<language>/` with this metadata:
 
@@ -35,7 +35,7 @@ Promoted skills in `skills/` are only changed by promotion, so every shipped ski
      task: toc-extraction                 # task ID in buddhist-benchmarks
      language: tibetan                    # matches the folder suffix
      language-code: bo                    # from languages.json
-     benchmark: toc-extraction/bo@v1      # task / data code @ data version
+     benchmark: toc-extraction/bo@1.0.0   # task / data code @ benchmark version (semver)
      score: "0.91 F1"                     # as on the leaderboard
      version: 1.0.0                       # this skill's version
      source: BuddhistAI/buddhist-skills@3f2a1c9:drafts/toc-extraction-tibetan/webuddhist-v1

@@ -43,12 +43,13 @@ buddhist-benchmarks/
   tasks/toc-extraction/
     TASK.md                         definition, I/O format, metric
     scorer/score.py                 one scorer, every language
-    data/bo/v1/                     Tibetan test set, versioned
+    CHANGELOG.md                    every benchmark version
+    data/bo/v1/                     Tibetan test set, major version 1 (exact semver in its README)
     results/bo/LEADERBOARD.md       Tibetan leaderboard
     results/bo/runs/<run>/          outputs + scores for one run
 ```
 
-Data folders use ISO codes. Data is versioned (`v1`, `v2`): a leaderboard row always names the version, and scores from different versions are never compared.
+Data folders use ISO codes. Data is versioned (decision 10): a leaderboard row always names the version, and scores from different versions are never compared.
 
 ### 6. Leaderboard rows cite an exact skill commit
 
@@ -65,6 +66,20 @@ A promoted `SKILL.md` records `task`, `language`, `language-code`, `benchmark`, 
 ### 9. Shared resources live in buddhist-skills `shared/`
 
 Glossaries (`shared/glossaries/bo-en.tsv`), transliteration tables, and style guides have one copy. Skills use them at run time; benchmark data that depends on one records the commit.
+
+### 10. Everything that is scored has a semantic version
+
+**Skills.** Every skill, promoted or draft, has `metadata.version` (semver) in its frontmatter, and also `metadata.variant` for drafts. Reports and leaderboard rows cite variant and version next to the exact commit, so a reader can tell "gepa-v1 1.0.0" from "gepa-v1 1.1.0" without diffing. Patch: wording fixes that should not change behavior. Minor: new rules or examples. Major: a change to the output format or to what the skill is for.
+
+**Benchmarks.** Benchmarks grow every time a new corner case is found, so each task's data set per language also has a semver version ([buddhist-benchmarks VERSIONING.md](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/VERSIONING.md)):
+
+- **patch**: wrong reference answers fixed;
+- **minor**: new items added, each with a short note on what it tests and where it came from;
+- **major**: the scorer or the input/output format changed (new `v<major>/` folder).
+
+Each task has a `CHANGELOG.md`, and releases are tagged `<task>/<code>@<version>`. A promoted skill's `metadata.benchmark` names the exact version (`toc-extraction/bo@1.0.0`). When the benchmark gets a new version, the promoted skill and the open challengers are re-run on it, and promotion is decided on the new version only.
+
+**Why:** without versions, a score of "0.95" means nothing once the data has moved, and nobody can tell whether a skill got better or the test got easier.
 
 ## Tasks anticipated
 
