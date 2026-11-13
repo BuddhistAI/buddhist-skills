@@ -1,18 +1,22 @@
-# BuddhistAI Skills
+# Buddhist Skills
 
-Agent skills for Buddhist text work: translation, table-of-contents extraction, proofreading, and more. Built in the open by WeBuddhist and any Buddhist organization that wants to take part.
+Open agent skills for working with Buddhist texts: table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation, and more. Built by WeBuddhist together with any Buddhist organization that wants to take part.
 
-This repo holds the **current best version** of each skill. Each skill is developed, compared, and benchmarked in its own repo (for example [`BuddhistAI/translation`](https://github.com/BuddhistAI/translation)). When a variant wins its benchmark, it is tagged there and promoted here.
+Every skill is **for one language**, written and maintained by people who know that language. Each one is the current winner on its task in [BuddhistAI/buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks).
 
 ## Install
 
-<details>
+Pick your language. You only get the skills for it, plus a few language-neutral ones.
+
+<details open>
 <summary><strong>Claude Code</strong></summary>
 
 ```bash
 claude plugin marketplace add BuddhistAI/buddhist-skills
-claude plugin install buddhistai-skills@buddhistai
+claude plugin install buddhist-skills-tibetan@buddhistai     # or -pali, -sanskrit, -classical-chinese, ...
 ```
+
+`buddhist-skills@buddhistai` installs every language.
 
 </details>
 
@@ -23,49 +27,32 @@ claude plugin install buddhistai-skills@buddhistai
 npx skills add BuddhistAI/buddhist-skills
 ```
 
-This copies the skill files into your project. Update by running it again.
+Then keep the skills ending in your language and drop the rest.
 
 </details>
 
-Not sure which skill you need? Ask your agent to use **[ask-buddhistai](./skills/router/ask-buddhistai/SKILL.md)**, which maps every skill and when to use it.
+The full list, with each skill's benchmark score, is in **[SKILLS.md](./SKILLS.md)**. Not sure which skill you need? Ask your agent to use **[ask-buddhistai](./skills/ask-buddhistai/SKILL.md)**.
 
-## Skills
+## How it fits together
 
-Skills are grouped by workflow. Each entry shows where the skill came from and how it scored.
+```
+BuddhistAI/buddhist-benchmarks            BuddhistAI/buddhist-skills (this repo)
+  tasks/toc-extraction/                     skills/toc-extraction-tibetan/
+    TASK.md      what the task is              SKILL.md   task, language, score
+    scorer/      one scorer, all languages     ...
+    data/bo/     Tibetan test set          drafts/toc-extraction-tibetan/<variant>/
+    results/bo/  leaderboard  ───winner───►   challengers, not shipped
+```
 
-### Translation
+- A **task** (for example `toc-extraction`) is defined once, in the benchmarks repo, with one input/output format and one scorer for every language.
+- A **skill** is a task for one language: `skills/<task>-<language>/`, for example `toc-extraction-tibetan`. Translation-type skills name both sides: `translation-tibetan-to-english`.
+- **Challengers** live in `drafts/` here, or in any fork or other organization's repo. They are scored on the benchmark; the winner is copied into `skills/`.
 
-_No skills promoted yet. See [skills/translation](./skills/translation/README.md)._
-
-### Text preparation
-
-_No skills promoted yet. See [skills/text-preparation](./skills/text-preparation/README.md)._
-
-### Router
-
-- **[ask-buddhistai](./skills/router/ask-buddhistai/SKILL.md)**: Find the right BuddhistAI skill for a task.
+The reasoning behind this layout is in [docs/design.md](./docs/design.md). How to contribute is in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Shared resources
 
-Glossaries, transliteration tables, and style guides used by more than one skill live in [`shared/`](./shared/README.md). There is one copy of each, here, so every skill and every skill repo uses the same terms.
-
-## How it works
-
-```
-BuddhistAI/translation          BuddhistAI/buddhist-skills (this repo)
-  variants/                       skills/translation/<skill>/
-    webuddhist-v1/   ─┐             SKILL.md  (source, version, score)
-    other-org-v2/     ├─ benchmark ─►
-  benchmarks/        ─┘   winner      CHANGELOG.md
-  results/LEADERBOARD.md  tagged
-```
-
-1. Anyone proposes a variant in a skill repo under `variants/`.
-2. The skill repo's benchmark scores every variant the same way. Scores go in `results/`.
-3. The winner is tagged in the skill repo (for example `translation@v1.2.0`).
-4. A PR here copies that tagged variant into `skills/<workflow>/<skill>/`, records its source, version, and score in the frontmatter, and adds a `CHANGELOG.md` entry.
-
-The full process is in [CONTRIBUTING.md](./CONTRIBUTING.md). To start a new skill repo, copy [`templates/skill-repo/`](./templates/skill-repo/README.md).
+Glossaries, transliteration tables, and style guides live in [`shared/`](./shared/README.md), one copy each, so every skill uses the same terms.
 
 ## License
 

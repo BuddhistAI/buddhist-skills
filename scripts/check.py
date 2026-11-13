@@ -1,72 +1,79 @@
 #!/usr/bin/env python3
-"""Check that promoted skills are listed everywhere and carry promotion metadata.
+"""Validate skills/ and make sure generated files are current.
 
-Run from the repo root: python3 scripts/check.py
+python3 scripts/check.py            # local checks only
+python3 scripts/check.py --tasks    # also check metadata.task against buddhist-benchmarks
 """
 import json
 import re
 import sys
+import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-SKILLS = ROOT / "skills"
-NOT_SHIPPED = {"in-progress", "deprecated"}
-NO_METADATA_NEEDED = {"router"}
-REQUIRED_METADATA = ["source", "variant", "version", "benchmark", "score", "promoted"]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from skills_lib import ROOT, collect_skills  # noqa: E402
+from build import build  # noqa: E402
 
-errors = []
+TASKS_URL = "https://raw.githubusercontent.com/BuddhistAI/buddhist-benchmarks/main/tasks/index.json"
+LANGUAGE_META = ["task", "language", "language-code", "benchmark", "score", "version", "source", "promoted"]
+NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 
+errors, warnings = [], []
+skills, languages = collect_skills()
 
-def frontmatter(path):
-    text = path.read_text(encoding="utf-8")
-    m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
-    if not m:
-        errors.append(f"{path.relative_to(ROOT)}: missing frontmatter")
-        return {}, ""
-    block = m.group(1)
-    top = dict(re.findall(r"^(\w[\w-]*):\s*(.*)$", block, re.M))
-    meta = {}
-    mm = re.search(r"^metadata:\s*\n((?:[ \t]+.*\n?)*)", block + "\n", re.M)
-    if mm:
-        meta = dict(re.findall(r"^[ \t]+(\w[\w-]*):\s*(.*?)\s*(?:#.*)?$", mm.group(1), re.M))
-    return top, meta
-
-
-plugin = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text())
-listed = {p.removeprefix("./").rstrip("/") for p in plugin.get("skills", [])}
-readme = (ROOT / "README.md").read_text(encoding="utf-8")
-
-shipped = set()
-for skill_md in sorted(SKILLS.glob("*/*/SKILL.md")):
-    folder = skill_md.parent
-    bucket = folder.parent.name
-    rel = folder.relative_to(ROOT).as_posix()
-    top, meta = frontmatter(skill_md)
-    if top.get("name") != folder.name:
-        errors.append(f"{rel}: frontmatter name {top.get('name')!r} does not match folder name")
-    if not top.get("description"):
-        errors.append(f"{rel}: missing description")
-    if bucket in NOT_SHIPPED:
-        if rel in listed:
-            errors.append(f"{rel}: {bucket} skills must not be in plugin.json")
+for s in skills:
+    where = f"skills/{s['name']}"
+    top, meta = s["top"], s["meta"]
+    if top is None:
+        errors.append(f"{where}: SKILL.md has no frontmatter")
         continue
-    shipped.add(rel)
-    if rel not in listed:
-        errors.append(f"{rel}: not listed in .claude-plugin/plugin.json")
-    if f"./{rel}/SKILL.md" not in readme:
-        errors.append(f"{rel}: not linked from README.md")
-    bucket_readme = folder.parent / "README.md"
-    if not bucket_readme.exists() or f"./{folder.name}/SKILL.md" not in bucket_readme.read_text(encoding="utf-8"):
-        errors.append(f"{rel}: not linked from {bucket}/README.md")
-    if bucket not in NO_METADATA_NEEDED:
-        missing = [k for k in REQUIRED_METADATA if not meta.get(k)]
-        if missing:
-            errors.append(f"{rel}: metadata missing {', '.join(missing)}")
+    if not NAME_RE.match(s["name"]):
+        errors.append(f"{where}: folder name must be lowercase kebab-case")
+    if top.get("name") != s["name"]:
+        errors.append(f"{where}: frontmatter name {top.get('name')!r} must equal folder name")
+    if not top.get("description"):
+        errors.append(f"{where}: missing description")
+    if s["target"] == "INVALID":
+        errors.append(f"{where}: '-to-<language>' needs a source language before it, e.g. translation-tibetan-to-english")
+        continue
+    if s["language"] is None:
+        continue
+    missing = [k for k in LANGUAGE_META if not meta.get(k)]
+    if missing:
+        errors.append(f"{where}: metadata missing {', '.join(missing)}")
+    if meta.get("language") and meta["language"] != s["language"]:
+        errors.append(f"{where}: metadata.language {meta['language']!r} does not match folder suffix {s['language']!r}")
+    code = languages[s["language"]]["code"]
+    if meta.get("language-code") and meta["language-code"] != code:
+        errors.append(f"{where}: metadata.language-code should be {code!r} (see languages.json)")
+    if meta.get("task") and meta["task"] != s["task"]:
+        errors.append(f"{where}: metadata.task {meta['task']!r} does not match folder name task {s['task']!r}")
+    if s["target"] and meta.get("target-language") != s["target"]:
+        errors.append(f"{where}: metadata.target-language must be {s['target']!r}")
 
-for rel in sorted(listed - shipped):
-    errors.append(f"plugin.json lists {rel}, which is not a shipped skill")
+for path in sorted(ROOT.glob("skills/*")):
+    if path.is_dir() and not (path / "SKILL.md").exists():
+        errors.append(f"skills/{path.name}: folder has no SKILL.md")
 
+marketplace, catalog = build()
+if (ROOT / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8") != marketplace:
+    errors.append(".claude-plugin/marketplace.json is out of date: run python3 scripts/build.py")
+if (ROOT / "SKILLS.md").read_text(encoding="utf-8") != catalog:
+    errors.append("SKILLS.md is out of date: run python3 scripts/build.py")
+
+if "--tasks" in sys.argv:
+    try:
+        with urllib.request.urlopen(TASKS_URL, timeout=20) as r:
+            known = {t["id"] for t in json.load(r)["tasks"]}
+        for s in skills:
+            if s["task"] and s["task"] not in known:
+                errors.append(f"skills/{s['name']}: task {s['task']!r} is not defined in buddhist-benchmarks tasks/index.json")
+    except Exception as e:  # network or repo not ready yet
+        warnings.append(f"could not fetch task list ({e}); task IDs not checked")
+
+for w in warnings:
+    print(f"warning: {w}")
 if errors:
     print("\n".join(errors))
     sys.exit(1)
-print(f"OK: {len(shipped)} shipped skill(s)")
+print(f"OK: {len(skills)} skill(s)")

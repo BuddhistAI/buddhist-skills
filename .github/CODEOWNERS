@@ -1,0 +1,10 @@
+# Default owner for everything.
+*                               @ngawangtrinley
+
+# Language owners review promotions and drafts for their language.
+# Replace with a team (for example @BuddhistAI/tibetan) once it exists.
+/skills/*-tibetan/              @ngawangtrinley
+/skills/*-tibetan-to-*/         @ngawangtrinley
+/drafts/*-tibetan/              @ngawangtrinley
+/drafts/*-tibetan-to-*/         @ngawangtrinley
+/shared/glossaries/bo-*         @ngawangtrinley

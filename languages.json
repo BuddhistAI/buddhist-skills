@@ -1,0 +1,15 @@
+{
+  "_comment": "Skill folder suffix (full English name, kebab-case) -> BCP 47 / ISO 639 code. Add a language here before adding its first skill.",
+  "languages": [
+    {"name": "tibetan", "code": "bo", "note": "Classical Tibetan texts; ISO 639-3 xct may be given as metadata.language-code-detail"},
+    {"name": "sanskrit", "code": "sa"},
+    {"name": "pali", "code": "pi"},
+    {"name": "classical-chinese", "code": "lzh"},
+    {"name": "chinese", "code": "zh", "note": "Modern Chinese"},
+    {"name": "japanese", "code": "ja"},
+    {"name": "korean", "code": "ko"},
+    {"name": "mongolian", "code": "mn"},
+    {"name": "dzongkha", "code": "dz"},
+    {"name": "english", "code": "en"}
+  ]
+}

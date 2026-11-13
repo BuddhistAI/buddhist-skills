@@ -1,59 +1,59 @@
 # Contributing
 
-BuddhistAI is open to every Buddhist organization. You do not need to be part of WeBuddhist to propose a skill, a variant, a benchmark item, or a glossary entry.
+BuddhistAI is open to every Buddhist organization and every specialist. You do not need to be part of WeBuddhist to propose a skill, a challenger, or a glossary entry.
 
 ## Where to send what
 
 | You want to... | Go to |
 | --- | --- |
-| Improve how a skill works | The skill's own repo, as a new folder under `variants/` |
-| Add test cases or change how a skill is scored | The skill's own repo, under `benchmarks/` |
-| Fix or add a glossary term, transliteration rule, or style rule | This repo, under `shared/` |
-| Propose a brand new skill | An issue in this repo, then a new skill repo from `templates/skill-repo/` |
-| Promote a benchmark winner | A PR in this repo (see below) |
+| Improve a skill for your language | A challenger in `drafts/<task>-<language>/<your-variant>/` here (or in your own repo), then benchmark it |
+| Add test data for your language, or a new task | [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks) |
+| Fix or add a glossary term, transliteration rule, or style rule | `shared/` in this repo |
+| Add a new language | `languages.json` in this repo, then data in buddhist-benchmarks |
 
-Changes to a promoted skill go through its skill repo first, never straight into this repo. That keeps every promoted skill traceable to a benchmark result.
+Promoted skills in `skills/` are only changed by promotion, so every shipped skill can be traced to a benchmark result.
 
-## Promoting a winner
+## Naming
 
-A promotion PR must:
+- `skills/<task>-<language>/`, for example `toc-extraction-tibetan`, `text-cleanup-classical-chinese`.
+- Tasks that produce another language add `-to-<language>`: `translation-tibetan-to-english`, `text-translation-alignment-pali-to-english`.
+- `<task>` is a task ID from [buddhist-benchmarks `tasks/index.json`](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/tasks/index.json).
+- `<language>` is a full name from [`languages.json`](./languages.json). The ISO code goes in metadata, not the name.
+- Language-neutral skills (like the router) have no language suffix.
 
-1. Copy the winning variant's folder, unchanged, from a **tag** in its skill repo into `skills/<workflow>/<skill-name>/`.
-2. Fill in the `metadata` block in that `SKILL.md`:
+## From challenger to promoted skill
+
+1. Put your challenger in `drafts/<task>-<language>/<org>-<short-name>/SKILL.md` (or in your own repo). Its frontmatter `name` should already be the final skill name, for example `toc-extraction-tibetan`.
+2. Run it on the task's benchmark set for your language and add your row to the leaderboard in buddhist-benchmarks, citing the exact commit of your skill.
+3. If it beats the current skill, open a PR here that copies it into `skills/<task>-<language>/` with this metadata:
 
    ```yaml
    ---
-   name: translate-tibetan-english
+   name: toc-extraction-tibetan
    description: ...
    metadata:
-     source: BuddhistAI/translation      # skill repo
-     variant: webuddhist-v2              # folder under variants/
-     version: translation@v1.2.0         # tag in the skill repo
-     benchmark: tib-eng-core-v1          # benchmark set used
-     score: "0.81 chrF / 4.3 human"      # headline result, as in results/
+     task: toc-extraction                 # task ID in buddhist-benchmarks
+     language: tibetan                    # matches the folder suffix
+     language-code: bo                    # from languages.json
+     benchmark: toc-extraction/bo@v1      # task / data code @ data version
+     score: "0.91 F1"                     # as on the leaderboard
+     version: 1.0.0                       # this skill's version
+     source: BuddhistAI/buddhist-skills@3f2a1c9:drafts/toc-extraction-tibetan/webuddhist-v1
      promoted: 2026-11-13
    ---
    ```
 
-3. List the skill in the top-level `README.md`, its workflow `README.md`, and `.claude-plugin/plugin.json`.
-4. Update [ask-buddhistai](./skills/router/ask-buddhistai/SKILL.md) if the skill is new or its purpose changed.
-5. Add an entry at the top of `CHANGELOG.md`.
+   Skills with `-to-<language>` also need `target-language`.
 
-`scripts/check.py` runs in CI and checks items 2 and 3.
+4. Run `python3 scripts/build.py` (regenerates `SKILLS.md` and the plugin marketplace) and `python3 scripts/check.py`.
+5. Add an entry at the top of `CHANGELOG.md`. Update [ask-buddhistai](./skills/ask-buddhistai/SKILL.md) if this is a new task for any language.
 
-## Skill folders
-
-- `skills/translation/`, `skills/text-preparation/`, ... : promoted skills, grouped by workflow. Shipped in the plugin.
-- `skills/router/`: the router skill. Shipped in the plugin.
-- `skills/in-progress/`: public on purpose, feedback wanted, not shipped.
-- `skills/deprecated/`: replaced or retired, kept for reference, not shipped.
-
-A new workflow folder needs a `README.md` and a section in the top-level `README.md`.
+Language owners in [`.github/CODEOWNERS`](./.github/CODEOWNERS) review promotions for their language.
 
 ## Shared resources
 
-Skills reference shared files by their path in this repo, for example `shared/glossaries/tibetan-english.tsv`. If a skill must work offline after `npx skills add`, it may bundle a copy, but this repo's copy is the source of truth and the bundled copy must say which commit it came from.
+Refer to shared files by their path in this repo, for example `shared/glossaries/bo-en.tsv`. A skill that must work offline may bundle a copy if it records the commit it came from.
 
 ## Writing style
 
-Plain English. Write for a reader whose first language may not be English. Use Unicode for Tibetan, Sanskrit, Pali, and Chinese, and say which transliteration scheme you use (see `shared/transliteration/`).
+Plain English, for readers whose first language may not be English. Use Unicode for Tibetan, Sanskrit, Pali, and Chinese, and say which transliteration scheme you use (see `shared/transliteration/`).
