@@ -81,6 +81,12 @@ Each task has a `CHANGELOG.md`, and releases are tagged `<task>/<code>@<version>
 
 **Why:** without versions, a score of "0.95" means nothing once the data has moved, and nobody can tell whether a skill got better or the test got easier.
 
+### 11. Workflows (planned)
+
+A pipeline of skills, such as cleanup → segmentation → translation → review, will be packaged as a skill of type `workflow` (e.g. `translation-workflow-tibetan`) that pins its stage skills' versions and ships in the same language plugin. It gets its own leaderboard with an end-to-end benchmark (raw input → finished output) showing total cost and time, next to the per-task stage leaderboards. Not built yet; details in [workflows.md](./workflows.md).
+
+**Why:** the best skill per stage is not always the best workflow, because errors compound; stage scores then show where a workflow loses points.
+
 ## Tasks anticipated
 
 | Task ID | What it does |
