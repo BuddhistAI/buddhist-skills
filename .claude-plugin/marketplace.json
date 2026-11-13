@@ -1,0 +1,17 @@
+{
+  "name": "buddhistai",
+  "owner": {
+    "name": "BuddhistAI",
+    "url": "https://github.com/BuddhistAI"
+  },
+  "description": "Open agent skills for Buddhist text work: translation, TOC extraction, proofreading and more.",
+  "plugins": [
+    {
+      "name": "buddhistai-skills",
+      "source": "./",
+      "description": "The current best BuddhistAI skill for each Buddhist text task, chosen by open benchmarks.",
+      "category": "productivity",
+      "keywords": ["buddhism", "translation", "tibetan", "sanskrit", "pali", "proofreading", "toc"]
+    }
+  ]
+}
