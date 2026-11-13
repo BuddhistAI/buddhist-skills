@@ -2,14 +2,14 @@
 
 _Template for a BuddhistAI skill repo. Copy this folder into a new repo named after the task (for example `BuddhistAI/translation`, `BuddhistAI/toc-extraction`), then replace `<skill>` throughout._
 
-This repo is where competing versions of the **<skill>** skill are built and compared. The current winner is published in [BuddhistAI/skills](https://github.com/BuddhistAI/skills).
+This repo is where competing versions of the **<skill>** skill are built and compared. The current winner is published in [BuddhistAI/buddhist-skills](https://github.com/BuddhistAI/buddhist-skills).
 
 ## Layout
 
 ```
 variants/          one folder per competing version of the skill
   <org>-v<N>/
-    SKILL.md       the skill itself (same format as in BuddhistAI/skills)
+    SKILL.md       the skill itself (same format as in BuddhistAI/buddhist-skills)
     VARIANT.md     who made it, what is different, which model(s) it was tested on
 benchmarks/
   <set-name>/      a test set: inputs, reference outputs, and a README describing it
@@ -33,11 +33,11 @@ Every variant is scored with the same benchmark sets, the same scoring scripts, 
 When a variant tops the leaderboard and maintainers agree:
 
 1. Tag the commit: `git tag <skill>@v<MAJOR>.<MINOR>.<PATCH>`.
-2. Open a PR in [BuddhistAI/skills](https://github.com/BuddhistAI/skills) that copies the variant folder from that tag, following its `CONTRIBUTING.md`.
+2. Open a PR in [BuddhistAI/buddhist-skills](https://github.com/BuddhistAI/buddhist-skills) that copies the variant folder from that tag, following its `CONTRIBUTING.md`.
 
 ## Shared resources
 
-Use glossaries, transliteration tables, and style guides from [`BuddhistAI/skills/shared`](https://github.com/BuddhistAI/skills/tree/main/shared). Do not keep a separate copy here. If a benchmark depends on a specific version, record the commit hash in the benchmark set's README.
+Use glossaries, transliteration tables, and style guides from [`BuddhistAI/buddhist-skills/shared`](https://github.com/BuddhistAI/buddhist-skills/tree/main/shared). Do not keep a separate copy here. If a benchmark depends on a specific version, record the commit hash in the benchmark set's README.
 
 ## License
 

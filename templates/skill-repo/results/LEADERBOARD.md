@@ -4,4 +4,4 @@
 | --- | --- | --- | --- | --- | --- |
 | example-v1 | example-set | | | | `results/example-v1/example-set/` |
 
-Current winner in BuddhistAI/skills: _none yet_.
+Current winner in BuddhistAI/buddhist-skills: _none yet_.

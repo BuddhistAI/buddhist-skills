@@ -17,8 +17,8 @@ No skills promoted yet (planned: table-of-contents extraction, proofreading, OCR
 
 ## Shared resources
 
-Glossaries, transliteration tables, and style guides are in `shared/` of https://github.com/BuddhistAI/skills. Any skill that translates or proofreads should use them, so terms stay consistent across organizations.
+Glossaries, transliteration tables, and style guides are in `shared/` of https://github.com/BuddhistAI/buddhist-skills. Any skill that translates or proofreads should use them, so terms stay consistent across organizations.
 
 ## If nothing fits
 
-Say that no BuddhistAI skill covers the task yet, and invite the user to open an issue at https://github.com/BuddhistAI/skills/issues describing the task, so a new skill repo can be started.
+Say that no BuddhistAI skill covers the task yet, and invite the user to open an issue at https://github.com/BuddhistAI/buddhist-skills/issues describing the task, so a new skill repo can be started.

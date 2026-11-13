@@ -10,7 +10,7 @@ This repo holds the **current best version** of each skill. Each skill is develo
 <summary><strong>Claude Code</strong></summary>
 
 ```bash
-claude plugin marketplace add BuddhistAI/skills
+claude plugin marketplace add BuddhistAI/buddhist-skills
 claude plugin install buddhistai-skills@buddhistai
 ```
 
@@ -20,7 +20,7 @@ claude plugin install buddhistai-skills@buddhistai
 <summary><strong>Any agent (skills.sh)</strong></summary>
 
 ```bash
-npx skills add BuddhistAI/skills
+npx skills add BuddhistAI/buddhist-skills
 ```
 
 This copies the skill files into your project. Update by running it again.
@@ -52,7 +52,7 @@ Glossaries, transliteration tables, and style guides used by more than one skill
 ## How it works
 
 ```
-BuddhistAI/translation          BuddhistAI/skills (this repo)
+BuddhistAI/translation          BuddhistAI/buddhist-skills (this repo)
   variants/                       skills/translation/<skill>/
     webuddhist-v1/   ─┐             SKILL.md  (source, version, score)
     other-org-v2/     ├─ benchmark ─►
