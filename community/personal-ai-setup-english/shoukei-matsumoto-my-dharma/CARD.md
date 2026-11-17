@@ -6,6 +6,7 @@ task: personal-ai-setup
 language: english
 authors: Shoukei Matsumoto
 contact: "https://www.living-dharma.com/p/my-dharmamd"
+license: CC0-1.0
 version: 1.0.0
 shared: 2026-11-17
 ---

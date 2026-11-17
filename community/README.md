@@ -12,7 +12,16 @@ Everything here is listed in [SKILLS.md](../SKILLS.md) under *Community (not yet
 
 ## How to share
 
-**The easy way (no git):** open a [Share a skill or workflow](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) issue and paste your prompt or describe your steps. A maintainer turns it into an entry here and credits you. You can also post in [Discussions](https://github.com/orgs/BuddhistAI/discussions).
+**The easy way (no git):** open the [Share a skill](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) form. Paste a link to your GitHub repo, or drag your files into the form. Your name and picture are optional. A maintainer turns it into an entry here and credits you. You can also post in [Discussions](https://github.com/orgs/BuddhistAI/discussions).
+
+**For maintainers, turning a Share issue into an entry:**
+
+1. Make the folder `community/<task>-<language>/<author>-<short-name>/` and copy the files from the link or the issue attachments, unchanged.
+2. Write `CARD.md` from the issue. Set `authors` to the name they gave (or their GitHub name), `github` to the issue author's GitHub name (unless they ask not to be shown), `avatar` to the picture they attached (if any), and `license` to their choice.
+3. Write `SOURCE.md`: where the files came from (the issue or repo link), the author, the date and the license. Files under a license other than MIT keep that license.
+4. Run `python3 scripts/build.py` and `python3 scripts/check.py`, open the PR with `Closes #<issue>`, and thank the author in the issue.
+
+The daily contributors job on the homepage reads `authors`, `github` and `avatar` from every community `CARD.md`, so the author appears in the contributors list after the merge.
 
 **With a pull request:** copy the templates and fill them in.
 
