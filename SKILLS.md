@@ -6,7 +6,7 @@ Install one language with `claude plugin install buddhist-skills-<language>@budd
 
 ## Language-neutral
 
-- **[ask-buddhistai](./skills/ask-buddhistai/SKILL.md)**: Find the right BuddhistAI skill for a Buddhist text task (table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation) in a given language. Use when the user asks which skill to use, or describes a Buddhist text task without naming a skill.
+- **[ask-buddhistai](./skills/ask-buddhistai/SKILL.md)**: Find the right BuddhistAI skill for a Buddhist task (table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation, and more) in a given language. Use when the user asks which skill to use, or describes a Buddhist task without naming a skill.
 
 ## Tibetan (`bo`)
 

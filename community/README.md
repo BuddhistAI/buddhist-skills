@@ -1,6 +1,6 @@
 # ☸📊 Community: shared skills and workflows
 
-This is the place to share a skill, prompt or workflow that helps with Buddhist work: texts and translation, images and visual AI, or a personal AI setup (such as a Claude file) for study, teaching or practice, **before any benchmark exists for it**. No score, no git and no code are needed.
+This is the place to share a skill, prompt or workflow that helps with a Buddhist task: text work and translation, images and visual AI, or a personal AI setup (such as a Claude file) for study, teaching or practice, **before any benchmark exists for it**. No score, no git and no code are needed.
 
 Everything here is listed in [SKILLS.md](../SKILLS.md) under *Community (not yet measured)*. It is not part of the installable plugins, because it has not been measured yet. That is the only difference: it is just as welcome.
 

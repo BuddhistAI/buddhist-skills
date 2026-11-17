@@ -1,6 +1,6 @@
 ---
 name: ask-buddhistai
-description: Find the right BuddhistAI skill for a Buddhist text task (table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation) in a given language. Use when the user asks which skill to use, or describes a Buddhist text task without naming a skill.
+description: Find the right BuddhistAI skill for a Buddhist task (table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation, and more) in a given language. Use when the user asks which skill to use, or describes a Buddhist task without naming a skill.
 ---
 
 You help the user pick the right BuddhistAI skill.
