@@ -16,6 +16,8 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 | Need AI for a task that nothing here covers | The [Request an AI solution form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
 | Check texts or outputs in a language you read | The [Volunteer as a language reader](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=reader.yml) form |
 | Improve a skill for your language | A challenger in `drafts/<task>-<language>/<your-variant>/` here (or in your own repo), then benchmark it |
+| Review a benchmark's answers as an expert | The [Review a benchmark form](https://github.com/BuddhistAI/buddhist-benchmarks/issues/new?template=expert-review.yml) |
+| Pay for evaluations with compute or API credits | The [Donate compute or API credits form](https://github.com/BuddhistAI/buddhist-benchmarks/issues/new?template=donate-compute.yml) |
 | Add test data for your language, or a new task | [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks) |
 | Fix or add a glossary term, transliteration rule, or style rule | `shared/` in this repo |
 | Add a new language | `languages.json` in this repo, then data in buddhist-benchmarks |
@@ -28,7 +30,8 @@ Everything shared or requested is tracked on the [Skills board](https://github.c
 
 - You do not need to know git. The issue forms above, or a post in [Discussions](https://github.com/orgs/BuddhistAI/discussions), are enough; a maintainer does the rest.
 - If you do open a pull request, a small or unfinished one is fine. Say what you are unsure about and we will help.
-- Templates to copy: [`templates/CARD.md`](./templates/CARD.md), [`templates/skill/SKILL.md`](./templates/skill/SKILL.md), [`templates/workflow/WORKFLOW.md`](./templates/workflow/WORKFLOW.md).
+- Templates to copy: [`templates/CARD.md`](./templates/CARD.md), [`templates/skill/SKILL.md`](./templates/skill/SKILL.md), [`templates/workflow/WORKFLOW.md`](./templates/workflow/WORKFLOW.md), and for a workshop repo (all variants, runs and [provenance records](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of one skill) [`templates/workshop/`](./templates/workshop/).
+- Step-by-step tutorials: [Learn by building](https://buddhistai.github.io/knowledge-base/learn/). Who decides what, and how organizations get their own team: [Governance](https://buddhistai.github.io/knowledge-base/governance.html).
 - Everyone who contributes is credited by name: in the card or skill metadata, on the leaderboard, and in the changelog. Reviewers and language readers too.
 - Please read the [code of conduct](./CODE_OF_CONDUCT.md).
 
@@ -43,7 +46,7 @@ Everything shared or requested is tracked on the [Skills board](https://github.c
 ## From challenger to promoted skill
 
 1. Put your challenger in `drafts/<task>-<language>/<org>-<short-name>/SKILL.md` (or in your own repo). Its frontmatter `name` should already be the final skill name, for example `toc-extraction-tibetan`, and it needs `metadata.variant` and `metadata.version` (semver). Bump the version on every change.
-2. Run it on the task's benchmark set for your language and add your row to the leaderboard in buddhist-benchmarks, citing the exact commit of your skill.
+2. Run it on the task's benchmark set for your language and add your row to the leaderboard in buddhist-benchmarks, citing the exact commit of your skill. Keep a [provenance record](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of each run in the repo where the skill is built (not in buddhist-benchmarks).
 3. If it beats the current skill, open a PR here that copies it into `skills/<task>-<language>/` with this metadata:
 
    ```yaml

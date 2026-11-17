@@ -1,0 +1,61 @@
+{
+  "schema": "buddhistai/provenance@1",
+  "run_id": "<date>-<skill>-<variant>-<version>-<short-commit>-<model-slug>",
+  "date": "YYYY-MM-DD",
+  "by": "<person or organization>",
+  "task": "<task id>",
+  "language": "<language code>",
+  "skill": {
+    "name": "<task>-<language>",
+    "variant": "<variant>",
+    "version": "0.1.0",
+    "ref": "<owner>/<repo>@<commit>:variants/<variant>",
+    "files": [{"path": "variants/<variant>/SKILL.md", "git_blob": "<git blob hash at that commit>"}]
+  },
+  "model": {
+    "id": "<id as in buddhist-benchmarks models.json>",
+    "provider": "<provider>",
+    "api": "<how it was called, for example OpenRouter chat completions>",
+    "settings": {"temperature": 1.0, "max_tokens": 8000}
+  },
+  "prompt": {
+    "how": "<one or two sentences: how the prompt is built from the files>",
+    "files": ["variants/<variant>/SKILL.md"]
+  },
+  "benchmark": {
+    "repo": "BuddhistAI/buddhist-benchmarks",
+    "tag": "<task>/<code>@<version>",
+    "path": "tasks/<task>/data/<code>/v<major>/test.jsonl",
+    "data_version": "<version>",
+    "scorer_version": "<version>",
+    "data_sha256": "<sha256 of test.jsonl at the tag>",
+    "items": 0
+  },
+  "harness": {
+    "repo": "<owner>/<repo>",
+    "commit": "<commit>",
+    "script": "benchmark/<run script>",
+    "libraries": ["<name>==<version>"],
+    "python": "3.x.y",
+    "command": "<the exact command line>",
+    "command_recorded": true
+  },
+  "runs": [
+    {"output": "results/<file>.json", "output_sha256": "<sha256>", "log": "results/<file>.log", "log_sha256": "<sha256>"}
+  ],
+  "repeats": 3,
+  "usage": {"input_tokens": 0, "output_tokens": 0, "items": 0, "estimated": false},
+  "cost": {
+    "usd_per_pass": 0.0,
+    "estimated": false,
+    "price": {"input_per_mtok": 0.0, "output_per_mtok": 0.0, "date": "YYYY-MM-DD", "source": "<price page>"}
+  },
+  "scores": {"headline": "<metric>", "all": {"<metric>": 0.0}, "std": {"all": 0.0}},
+  "links": {
+    "result": "<link to result.json in buddhist-benchmarks>",
+    "outputs": "<link to the stored outputs>",
+    "report": "<link to REPORT.md>",
+    "leaderboard": "<link to the leaderboard page>"
+  },
+  "notes": ""
+}
