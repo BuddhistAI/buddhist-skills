@@ -1,31 +1,43 @@
-name: Request a skill or benchmark
-description: Ask for a skill, or a benchmark to measure skills, for a task and language.
+name: Request an AI solution for a task
+description: Need AI for a Buddhist task that nothing here covers yet? Tell us. No technical knowledge needed.
 title: "Request: "
 labels: [request]
 body:
-  - type: input
+  - type: markdown
+    attributes:
+      value: |
+        Tell us what you need. We put every request on the [Skills board](https://github.com/orgs/BuddhistAI/projects) so everyone can see it, and anyone who builds AI solutions can pick it up.
+  - type: textarea
     id: task
     attributes:
-      label: Task
-      description: What should it do?
-      placeholder: Align a Tibetan root text with its commentary
+      label: What do you need AI to do?
+      description: Describe the task in your own words.
+      placeholder: Find every quotation from the Bodhicaryāvatāra in a Tibetan commentary and say where it comes from.
     validations: {required: true}
   - type: input
     id: language
     attributes:
       label: Language(s)
-      placeholder: Tibetan
+      description: The language of your material, and of the result if it is different.
+      placeholder: Tibetan → English
     validations: {required: true}
   - type: textarea
-    id: why
+    id: who
     attributes:
-      label: Who needs it and why
+      label: Who needs it, and why?
+      description: Your project or organization, and how the result will be used.
   - type: textarea
     id: example
     attributes:
-      label: Example input and the output you would want
+      label: An example
+      description: A short real input, and the result you would want.
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Tools, models or prompts you used, and what went wrong.
   - type: textarea
     id: help
     attributes:
       label: Can you help?
-      description: For example with example texts, checking outputs, or an existing prompt.
+      description: For example with example material, checking results, or testing.

@@ -29,4 +29,4 @@ Glossaries, transliteration tables, and style guides are in `shared/` of https:/
 
 ## If nothing fits
 
-Say that no BuddhistAI skill covers this task and language yet, and invite the user to request it (https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml). If they already have a prompt or workflow that works for them, invite them to share it (https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml).
+Say that no BuddhistAI skill covers this task and language yet, and invite the user to request an AI solution for it (https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml). If they already have a prompt or workflow that works for them, invite them to share it (https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml).

@@ -13,7 +13,7 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 | You want to... | Go to |
 | --- | --- |
 | Share a prompt, skill or workflow you use | [`community/`](./community/README.md), or the [Share form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) (no git needed) |
-| Ask for a skill or benchmark that does not exist | The [Request form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
+| Need AI for a task that nothing here covers | The [Request an AI solution form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
 | Check texts or outputs in a language you read | The [Volunteer as a language reader](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=reader.yml) form |
 | Improve a skill for your language | A challenger in `drafts/<task>-<language>/<your-variant>/` here (or in your own repo), then benchmark it |
 | Add test data for your language, or a new task | [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks) |
