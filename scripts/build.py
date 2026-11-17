@@ -44,7 +44,7 @@ def build():
     marketplace = {
         "name": "buddhistai",
         "owner": {"name": "BuddhistAI", "url": "https://github.com/BuddhistAI"},
-        "description": "Open agent skills for Buddhist text work, one plugin per language. Each skill is the current benchmark winner for its task and language.",
+        "description": "Open Buddhist AI skills, one plugin per language. Each skill is the current benchmark winner for its task and language.",
         "plugins": plugins,
     }
 
