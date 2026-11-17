@@ -21,3 +21,4 @@ Shared by contributors and not benchmarked yet, so not in the plugins. Copy a fo
 | Entry | Kind | Language | Task | By | Version |
 | --- | --- | --- | --- | --- | --- |
 | [my-dharma.md (Shoukei Matsumoto's version)](./community/personal-ai-setup-english/shoukei-matsumoto-my-dharma/CARD.md) | personal | English | personal-ai-setup | Shoukei Matsumoto | 1.0.0 |
+| [Two strategies for improving machine translation from Tibetan](./community/translation-tibetan-to-french/drupchen-two-strategies/CARD.md) | workflow | Tibetan → French | translation | Drupchen | 1.0.0 |
