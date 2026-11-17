@@ -2,6 +2,10 @@
 
 Newest first. One entry per promotion, retirement, or change to `shared/`.
 
+## 2026-11-17: first community entry
+
+- `community/personal-ai-setup-english/shoukei-matsumoto-my-dharma/`: my-dharma.md by Shoukei Matsumoto, a personal AI file (CC0), copied whole. New community kind `personal` for personal AI setups that keep their own file name.
+
 ## 2026-11-17: community entries and contributor docs
 
 - New `community/` folder for skills, prompts and workflows shared before any benchmark exists (design decision 12). Listed in SKILLS.md under *Community (not yet measured)*, never in a plugin; checked by `scripts/check.py`.

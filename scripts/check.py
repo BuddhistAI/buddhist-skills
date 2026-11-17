@@ -19,7 +19,7 @@ LANGUAGE_META = ["task", "language", "language-code", "benchmark", "score", "ver
 NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
 CARD_FIELDS = ["title", "kind", "task", "language", "authors", "version", "shared"]
-KINDS = {"skill", "workflow", "prompt"}
+KINDS = {"skill", "workflow", "prompt", "personal"}
 
 errors, warnings = [], []
 skills, languages = collect_skills()
@@ -87,7 +87,11 @@ for e in collect_community():
         errors.append(f"{where}/CARD.md: target-language must be {e['target']!r}")
     if c.get("version") and not SEMVER_RE.match(c["version"]):
         errors.append(f"{where}/CARD.md: version must be semver, e.g. 0.1.0")
-    if not e["files"]:
+    if c.get("kind") == "personal":
+        # A personal AI setup (e.g. a Claude file) keeps its own file name, named in the card.
+        if not c.get("file") or not (ROOT / where / c["file"]).is_file():
+            errors.append(f"{where}/CARD.md: kind personal needs 'file:' naming a file in this folder")
+    elif not e["files"]:
         errors.append(f"{where}: needs one of {', '.join(COMMUNITY_FILES)}")
 
 marketplace, catalog = build()

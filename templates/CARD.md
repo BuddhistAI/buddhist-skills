@@ -1,6 +1,6 @@
 ---
 title: Short name people will recognise
-kind: skill              # skill, workflow or prompt
+kind: skill              # skill, workflow, prompt, or personal (a personal AI setup, e.g. a Claude file; add file: <its name>)
 task: translation        # same as the folder name's task part
 language: pali           # source language, from languages.json
 target-language: english # only for tasks that produce another language; otherwise delete this line

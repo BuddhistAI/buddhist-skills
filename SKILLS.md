@@ -18,4 +18,6 @@ Install one language with `claude plugin install buddhist-skills-<language>@budd
 
 Shared by contributors and not benchmarked yet, so not in the plugins. Copy a folder to use it. How to share yours: [community/README.md](./community/README.md).
 
-_Nothing shared yet. Be the first!_
+| Entry | Kind | Language | Task | By | Version |
+| --- | --- | --- | --- | --- | --- |
+| [my-dharma.md (Shoukei Matsumoto's version)](./community/personal-ai-setup-english/shoukei-matsumoto-my-dharma/CARD.md) | personal | English | personal-ai-setup | Shoukei Matsumoto | 1.0.0 |

@@ -21,7 +21,9 @@ community/<task>-<language>/<you>-<short-name>/
   CARD.md        what it is, who made it, how to use it (from templates/CARD.md)
   SKILL.md       the skill itself (from templates/skill/SKILL.md), or
   WORKFLOW.md    the steps of a workflow (from templates/workflow/WORKFLOW.md), or
-  PROMPT.md      a plain prompt to paste into any chat assistant
+  PROMPT.md      a plain prompt to paste into any chat assistant, or
+  <its-name>.md  a personal AI setup (such as a Claude file), kept under its own name;
+                 set kind: personal and file: <its-name>.md in CARD.md
   ...            any reference files the skill reads
 ```
 
