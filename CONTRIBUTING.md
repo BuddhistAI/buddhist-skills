@@ -22,6 +22,8 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 
 Promoted skills in `skills/` are only changed by promotion, so every shipped skill can be traced to a benchmark result.
 
+Everything shared or requested is tracked on the [Skills board](https://github.com/orgs/BuddhistAI/projects/1). New benchmarks are tracked on the [Benchmarks board](https://github.com/orgs/BuddhistAI/projects/2).
+
 ## First time?
 
 - You do not need to know git. The issue forms above, or a post in [Discussions](https://github.com/orgs/BuddhistAI/discussions), are enough; a maintainer does the rest.

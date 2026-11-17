@@ -6,6 +6,9 @@ Open AI skills for Buddhist tasks: text work (table-of-contents extraction, clea
 
 What each task is (definition, examples, hard cases) and the real workflows it comes from are in the [BuddhistAI knowledge base](https://buddhistai.github.io/knowledge-base/), together with our experiment reports. Anyone can edit it.
 
+- **Need AI for a task that nothing here covers?** [Request an AI solution](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml). No technical knowledge needed.
+- **See what is requested, shared and being measured:** the [Skills board](https://github.com/orgs/BuddhistAI/projects/1).
+
 Every skill is **for one language**, written and maintained by people who know that language. Each one is the current winner on its task in [BuddhistAI/buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks).
 
 ## Install

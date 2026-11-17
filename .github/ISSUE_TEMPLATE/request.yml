@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Tell us what you need. We put every request on the [Skills board](https://github.com/orgs/BuddhistAI/projects) so everyone can see it, and anyone who builds AI solutions can pick it up.
+        Tell us what you need. We put every request on the [Skills board](https://github.com/orgs/BuddhistAI/projects/1) so everyone can see it, and anyone who builds AI solutions can pick it up.
   - type: textarea
     id: task
     attributes:
