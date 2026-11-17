@@ -4,6 +4,8 @@
 
 Open AI skills for Buddhist tasks: text work (table-of-contents extraction, cleanup, alignment, entity extraction, citation mapping, translation), images and visual AI, and personal AI setups (such as Claude files) for Buddhist study, teaching and practice. Built together by Buddhist organizations, translators, scholars and developers. Anyone can take part, and you can [share a skill or workflow](./community/README.md) today, with no benchmark score needed.
 
+What each task is (definition, examples, hard cases) and the real workflows it comes from are on the [BuddhistAI wiki](https://buddhistai.github.io/wiki/). Anyone can edit it.
+
 Every skill is **for one language**, written and maintained by people who know that language. Each one is the current winner on its task in [BuddhistAI/buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks).
 
 ## Install
