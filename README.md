@@ -1,6 +1,6 @@
 # ☸📊 Buddhist Skills
 
-> BuddhistAI helps anyone working on a Buddhist project find the best-performing and best-value AI solution for their task, and helps anyone building AI solutions share theirs and take part in the evaluations. This repo holds the best measured skill for each task and language, plus [community entries](./community/README.md) not yet measured.
+> BuddhistAI helps people who work on Buddhist projects find the best AI solution for each task: the one with the best results, and the one with the best results for its cost. It also helps people who build AI solutions share them and have them tested. This repo holds the best measured skill for each task and language, plus [community entries](./community/README.md) not yet measured.
 
 Open AI skills for Buddhist tasks: text work (table-of-contents extraction, cleanup, alignment, entity extraction, citation mapping, translation), images and visual AI, and personal AI setups (such as Claude files) for Buddhist study, teaching and practice. Built together by Buddhist organizations, translators, scholars and developers. Anyone can take part, and you can [share a skill or workflow](./community/README.md) today, with no benchmark score needed.
 
@@ -51,7 +51,7 @@ BuddhistAI/buddhist-benchmarks            BuddhistAI/buddhist-skills (this repo)
 - **Community entries** live in [`community/`](./community/README.md): anything shared before a benchmark exists for it. Listed in SKILLS.md, not in the plugins.
 - **Challengers** live in `drafts/` here, or in any fork or other organization's repo. They are scored on the benchmark; the winner is copied into `skills/`.
 
-The reasoning behind this layout is in [docs/design.md](./docs/design.md). How to contribute (Share → Measure → Ship) is in [CONTRIBUTING.md](./CONTRIBUTING.md).
+The reasoning behind this layout is in [docs/design.md](./docs/design.md). How to contribute (Share → Measure → Release) is in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Shared resources
 

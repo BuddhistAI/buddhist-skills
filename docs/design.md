@@ -89,7 +89,7 @@ A pipeline of skills, such as cleanup → segmentation → translation → revie
 
 ### 12. Share before measuring: `community/`
 
-Anyone can share a skill, prompt or workflow in `community/<task>-<language>/<author>-<name>/`, with a `CARD.md` (title, kind, language, authors, version) and the skill, workflow or prompt itself. No benchmark score is needed. `build.py` lists entries in SKILLS.md under *Community (not yet measured)*; they are never in a plugin. The task part of the name is free, but should be a task ID when one fits. When a benchmark exists for its task and language, an entry moves to `drafts/` as a challenger. The ladder is Share → Measure → Ship.
+Anyone can share a skill, prompt or workflow in `community/<task>-<language>/<author>-<name>/`, with a `CARD.md` (title, kind, language, authors, version) and the skill, workflow or prompt itself. No benchmark score is needed. `build.py` lists entries in SKILLS.md under *Community (not yet measured)*; they are never in a plugin. The task part of the name is free, but should be a task ID when one fits. When a benchmark exists for its task and language, an entry moves to `drafts/` as a challenger. The three steps are Share → Measure → Release.
 
 **Why:** most tasks and languages have no benchmark yet, so a measure-first rule would turn away most contributors. Shared entries also show which benchmarks to build next. Keeping them out of the plugins keeps the promise that every installed skill is the measured best.
 

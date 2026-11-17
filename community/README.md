@@ -4,11 +4,11 @@ This is the place to share a skill, prompt or workflow that helps with a Buddhis
 
 Everything here is listed in [SKILLS.md](../SKILLS.md) under *Community (not yet measured)*. It is not part of the installable plugins, because it has not been measured yet. That is the only difference: it is just as welcome.
 
-## The ladder: Share → Measure → Ship
+## Three steps: Share → Measure → Release
 
 1. **Share** (here). Anyone can add a skill or workflow with a short card: what it does, which language, who made it, how to use it, one example.
 2. **Measure.** When a benchmark exists for that task and language in [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks), the entry is scored and appears on the [leaderboard](https://buddhistai.github.io/buddhist-benchmarks/). It then moves to `drafts/` as a challenger. If no benchmark exists yet, your entry shows us which one to build next.
-3. **Ship.** The best measured skill for each task and language is promoted to `skills/` and installs with the language plugin (see [CONTRIBUTING.md](../CONTRIBUTING.md)).
+3. **Release.** The best measured skill for each task and language is promoted to `skills/` and installs with the language plugin (see [CONTRIBUTING.md](../CONTRIBUTING.md)).
 
 ## How to share
 

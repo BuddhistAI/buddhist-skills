@@ -2,11 +2,11 @@
 
 BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, scholars and developers. You do not need to know git or code to take part.
 
-## Three steps: Share → Measure → Ship
+## Three steps: Share → Measure → Release
 
 1. **Share.** Have a prompt, skill or workflow that helps you? Share it in [`community/`](./community/README.md), with no benchmark score needed. The easiest way is the [Share a skill or workflow](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) form: paste it in, and a maintainer adds it and credits you.
 2. **Measure.** Once a benchmark exists for its task and language, it is scored on the [leaderboard](https://buddhistai.github.io/buddhist-benchmarks/). See [how to submit](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/SUBMIT.md).
-3. **Ship.** The best measured skill for each task and language is promoted to `skills/` and installs with the plugin (below).
+3. **Release.** The best measured skill for each task and language is promoted to `skills/` and installs with the plugin (below).
 
 ## Where to send what
 
