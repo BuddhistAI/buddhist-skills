@@ -2,7 +2,7 @@
 
 Status: **planned, not built.** Implement this when the first workflow skill exists. Tracking issue: [#2](https://github.com/BuddhistAI/buddhist-skills/issues/2).
 
-How people really work, step by step, is written down on the [BuddhistAI wiki](https://buddhistai.github.io/wiki/) (for example [Kurt Keutzer's translation workflow](https://buddhistai.github.io/wiki/workflows/translation.html)). This page is only about packaging a chain of skills as one skill.
+How people really work, step by step, is written down in the [BuddhistAI knowledge base](https://buddhistai.github.io/knowledge-base/) (for example [Kurt Keutzer's translation workflow](https://buddhistai.github.io/knowledge-base/workflows/translation.html)). This page is only about packaging a chain of skills as one skill.
 
 A translator rarely wants one step. They want a pipeline, for example cleanup → segmentation → translation → review. This page records how such pipelines will be packaged and ranked, so the first one fits without redesign.
 
