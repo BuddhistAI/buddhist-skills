@@ -10,6 +10,7 @@
     {"name": "korean", "code": "ko"},
     {"name": "mongolian", "code": "mn"},
     {"name": "dzongkha", "code": "dz"},
-    {"name": "english", "code": "en"}
+    {"name": "english", "code": "en"},
+    {"name": "french", "code": "fr", "note": "Target language for translation entries"}
   ]
 }
