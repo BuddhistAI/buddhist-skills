@@ -1,6 +1,6 @@
 # Drafts
 
-Challengers for a task and language, not shipped in any plugin.
+Challengers for a task and language that has a benchmark, not shipped in any plugin. Nothing to measure it on yet? Share it in [`community/`](../community/README.md) instead.
 
 Layout: `drafts/<task>-<language>/<org>-<short-name>/SKILL.md`, for example `drafts/toc-extraction-tibetan/webuddhist-v1/SKILL.md`.
 

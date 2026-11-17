@@ -21,7 +21,7 @@ These are the task IDs defined in https://github.com/BuddhistAI/buddhist-benchma
 - `text-commentary-alignment`: link each passage of a root text to the commentary passages that explain it.
 - `translation` and its stages: segmentation, term extraction, draft translation, review.
 
-Promoted skills so far: `toc-extraction-tibetan`. For any other task and language, no skill is promoted yet: say so plainly, and point the user to the drafts and leaderboards in the two repos above.
+Promoted skills so far: `toc-extraction-tibetan`. For any other task and language, no skill is promoted yet: say so plainly. Then check the *Community (not yet measured)* section of SKILLS.md: contributors share skills, prompts and workflows there before a benchmark exists. If one fits, offer it and say clearly that it has not been measured. Also point to the drafts and leaderboards in the two repos above.
 
 ## Shared resources
 
@@ -29,4 +29,4 @@ Glossaries, transliteration tables, and style guides are in `shared/` of https:/
 
 ## If nothing fits
 
-Say that no BuddhistAI skill covers this task and language yet, and invite the user to open an issue at https://github.com/BuddhistAI/buddhist-skills/issues naming the task and language.
+Say that no BuddhistAI skill covers this task and language yet, and invite the user to request it (https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml). If they already have a prompt or workflow that works for them, invite them to share it (https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml).

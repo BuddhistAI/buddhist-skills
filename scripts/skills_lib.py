@@ -5,6 +5,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = ROOT / "skills"
+COMMUNITY = ROOT / "community"
+COMMUNITY_FILES = ("SKILL.md", "WORKFLOW.md", "PROMPT.md")
 
 
 def load_languages():
@@ -13,13 +15,13 @@ def load_languages():
 
 
 def parse_frontmatter(path):
-    """Return (top-level fields, metadata fields) from a SKILL.md. Flat YAML only."""
+    """Return (top-level fields, metadata fields) from a SKILL.md or CARD.md. Flat YAML only."""
     text = path.read_text(encoding="utf-8")
     m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
     if not m:
         return None, None
     block = m.group(1)
-    top = {k: v.strip().strip('"') for k, v in re.findall(r"^(\w[\w-]*):[ \t]*(.*)$", block, re.M)}
+    top = {k: re.sub(r"\s+#.*$", "", v).strip().strip('"') for k, v in re.findall(r"^(\w[\w-]*):[ \t]*(.*)$", block, re.M)}
     meta = {}
     mm = re.search(r"^metadata:[ \t]*\n((?:[ \t]+.*\n?)*)", block + "\n", re.M)
     if mm:
@@ -68,3 +70,26 @@ def collect_skills():
             "target": target,
         })
     return skills, languages
+
+
+def collect_community():
+    """Shared entries: community/<task>-<language>/<author>-<name>/CARD.md. Not shipped in plugins."""
+    languages = load_languages()
+    entries = []
+    for group in sorted(p for p in COMMUNITY.glob("*") if p.is_dir()):
+        task, lang, target = split_name(group.name, languages)
+        for entry in sorted(p for p in group.glob("*") if p.is_dir()):
+            card = entry / "CARD.md"
+            top, _ = parse_frontmatter(card) if card.exists() else (None, None)
+            entries.append({
+                "group": group.name,
+                "name": entry.name,
+                "path": f"community/{group.name}/{entry.name}",
+                "card": top,
+                "has_card": card.exists(),
+                "files": [f for f in COMMUNITY_FILES if (entry / f).exists()],
+                "task": task if lang else group.name,
+                "language": lang,
+                "target": target,
+            })
+    return entries

@@ -1,0 +1,28 @@
+name: Volunteer as a language reader
+description: Offer to check texts, answer keys or skill outputs in a language you read.
+title: "Reader: "
+labels: [language-reader]
+body:
+  - type: markdown
+    attributes:
+      value: Benchmarks and skills are only as good as the people who check them. Thank you!
+  - type: input
+    id: languages
+    attributes:
+      label: Languages you read
+      placeholder: Classical Tibetan, Thai
+    validations: {required: true}
+  - type: textarea
+    id: background
+    attributes:
+      label: Background
+      description: Tradition, training or translation experience, as much as you want to share.
+  - type: input
+    id: time
+    attributes:
+      label: Time you can give
+      placeholder: About two hours a month
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you?

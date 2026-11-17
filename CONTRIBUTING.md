@@ -1,17 +1,34 @@
-# Contributing
+# ☸📊 Contributing to BuddhistAI
 
-BuddhistAI is open to every Buddhist organization and every specialist. You do not need to be part of WeBuddhist to propose a skill, a challenger, or a glossary entry.
+BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, scholars and developers. You do not need to know git or code to take part.
+
+## Three steps: Share → Measure → Ship
+
+1. **Share.** Have a prompt, skill or workflow that helps you? Share it in [`community/`](./community/README.md), with no benchmark score needed. The easiest way is the [Share a skill or workflow](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) form: paste it in, and a maintainer adds it and credits you.
+2. **Measure.** Once a benchmark exists for its task and language, it is scored on the [leaderboard](https://buddhistai.github.io/buddhist-benchmarks/). See [how to submit](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/SUBMIT.md).
+3. **Ship.** The best measured skill for each task and language is promoted to `skills/` and installs with the plugin (below).
 
 ## Where to send what
 
 | You want to... | Go to |
 | --- | --- |
+| Share a prompt, skill or workflow you use | [`community/`](./community/README.md), or the [Share form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) (no git needed) |
+| Ask for a skill or benchmark that does not exist | The [Request form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
+| Check texts or outputs in a language you read | The [Volunteer as a language reader](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=reader.yml) form |
 | Improve a skill for your language | A challenger in `drafts/<task>-<language>/<your-variant>/` here (or in your own repo), then benchmark it |
 | Add test data for your language, or a new task | [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks) |
 | Fix or add a glossary term, transliteration rule, or style rule | `shared/` in this repo |
 | Add a new language | `languages.json` in this repo, then data in buddhist-benchmarks |
 
 Promoted skills in `skills/` are only changed by promotion, so every shipped skill can be traced to a benchmark result.
+
+## First time?
+
+- You do not need to know git. The issue forms above, or a post in [Discussions](https://github.com/orgs/BuddhistAI/discussions), are enough; a maintainer does the rest.
+- If you do open a pull request, a small or unfinished one is fine. Say what you are unsure about and we will help.
+- Templates to copy: [`templates/CARD.md`](./templates/CARD.md), [`templates/skill/SKILL.md`](./templates/skill/SKILL.md), [`templates/workflow/WORKFLOW.md`](./templates/workflow/WORKFLOW.md).
+- Everyone who contributes is credited by name: in the card or skill metadata, on the leaderboard, and in the changelog. Reviewers and language readers too.
+- Please read the [code of conduct](./CODE_OF_CONDUCT.md).
 
 ## Naming
 
@@ -53,6 +70,10 @@ Language owners in [`.github/CODEOWNERS`](./.github/CODEOWNERS) review promotion
 ## Shared resources
 
 Refer to shared files by their path in this repo, for example `shared/glossaries/bo-en.tsv`. A skill that must work offline may bundle a copy if it records the commit it came from.
+
+## Credit
+
+Put every author in the frontmatter: `authors` in a community `CARD.md`, `metadata.authors` in a draft or promoted `SKILL.md` (for example `Jane Doe (Example Sangha); Tashi (Example Institute)`). Name the people and organizations whose work a skill builds on in its card or `VARIANT.md`, with their license.
 
 ## Writing style
 

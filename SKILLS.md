@@ -13,3 +13,9 @@ Install one language with `claude plugin install buddhist-skills-<language>@budd
 | Skill | Task | Benchmark | Score | Version |
 | --- | --- | --- | --- | --- |
 | [toc-extraction-tibetan](./skills/toc-extraction-tibetan/SKILL.md) | toc-extraction | toc-extraction/bo@1.0.0 | 0.893 structure_f1 (mean of Claude Haiku 5.5 0.823 and Sonnet 5.5 0.962) | 1.0.0 |
+
+## Community (not yet measured)
+
+Shared by contributors and not benchmarked yet, so not in the plugins. Copy a folder to use it. How to share yours: [community/README.md](./community/README.md).
+
+_Nothing shared yet. Be the first!_

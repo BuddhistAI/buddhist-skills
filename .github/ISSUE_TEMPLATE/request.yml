@@ -1,0 +1,31 @@
+name: Request a skill or benchmark
+description: Ask for a skill, or a benchmark to measure skills, for a task and language.
+title: "Request: "
+labels: [request]
+body:
+  - type: input
+    id: task
+    attributes:
+      label: Task
+      description: What should it do?
+      placeholder: Align a Tibetan root text with its commentary
+    validations: {required: true}
+  - type: input
+    id: language
+    attributes:
+      label: Language(s)
+      placeholder: Tibetan
+    validations: {required: true}
+  - type: textarea
+    id: why
+    attributes:
+      label: Who needs it and why
+  - type: textarea
+    id: example
+    attributes:
+      label: Example input and the output you would want
+  - type: textarea
+    id: help
+    attributes:
+      label: Can you help?
+      description: For example with example texts, checking outputs, or an existing prompt.

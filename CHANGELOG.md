@@ -2,6 +2,13 @@
 
 Newest first. One entry per promotion, retirement, or change to `shared/`.
 
+## 2026-11-17: community entries and contributor docs
+
+- New `community/` folder for skills, prompts and workflows shared before any benchmark exists (design decision 12). Listed in SKILLS.md under *Community (not yet measured)*, never in a plugin; checked by `scripts/check.py`.
+- Templates in `templates/` (CARD, skill, workflow), issue forms (share, request, language reader, problem), a pull request template and a code of conduct.
+- CONTRIBUTING now starts with the Share → Measure → Ship ladder and a first-timer section; `metadata.authors` for credit.
+- `ask-buddhistai` points to community entries when no skill is promoted.
+
 ## 2026-11-13: promote `toc-extraction-tibetan` 1.0.0
 
 - Promoted variant sabcad-outliner-toc 1.0.0 from [BuddhistAI/toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan) (`9576ad2`). It scored structure_f1 0.893 on `toc-extraction/bo@1.0.0`: 0.823 on Claude Haiku 5.5 and 0.962 on Sonnet 5.5, mean of 3 runs each. Based on a colleague's sabcad-outliner skill, MIT.

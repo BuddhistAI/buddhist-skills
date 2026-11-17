@@ -1,6 +1,6 @@
-# Buddhist Skills
+# ☸📊 Buddhist Skills
 
-Open agent skills for working with Buddhist texts: table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation, and more. Built by WeBuddhist together with any Buddhist organization that wants to take part.
+Open agent skills for working with Buddhist texts: table-of-contents extraction, text cleanup, alignment, entity extraction, citation mapping, translation, and more. Built together by Buddhist organizations, translators, scholars and developers. Anyone can take part, and you can [share a skill or workflow](./community/README.md) today, with no benchmark score needed.
 
 Every skill is **for one language**, written and maintained by people who know that language. Each one is the current winner on its task in [BuddhistAI/buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks).
 
@@ -46,9 +46,10 @@ BuddhistAI/buddhist-benchmarks            BuddhistAI/buddhist-skills (this repo)
 
 - A **task** (for example `toc-extraction`) is defined once, in the benchmarks repo, with one input/output format and one scorer for every language.
 - A **skill** is a task for one language: `skills/<task>-<language>/`, for example `toc-extraction-tibetan`. Translation-type skills name both sides: `translation-tibetan-to-english`.
+- **Community entries** live in [`community/`](./community/README.md): anything shared before a benchmark exists for it. Listed in SKILLS.md, not in the plugins.
 - **Challengers** live in `drafts/` here, or in any fork or other organization's repo. They are scored on the benchmark; the winner is copied into `skills/`.
 
-The reasoning behind this layout is in [docs/design.md](./docs/design.md). How to contribute is in [CONTRIBUTING.md](./CONTRIBUTING.md).
+The reasoning behind this layout is in [docs/design.md](./docs/design.md). How to contribute (Share → Measure → Ship) is in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Shared resources
 

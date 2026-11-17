@@ -1,0 +1,25 @@
+name: Report a problem
+description: A skill gives wrong output, a doc is unclear, or something is broken.
+title: "Problem: "
+labels: [bug]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Which skill, entry or page?
+      placeholder: toc-extraction-tibetan 1.0.0
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations: {required: true}
+  - type: textarea
+    id: example
+    attributes:
+      label: Input and output, if any
+  - type: input
+    id: model
+    attributes:
+      label: Model and tool used
+      placeholder: Claude Code with Sonnet 5.5
