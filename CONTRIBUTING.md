@@ -4,7 +4,7 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 
 ## Three steps: Share → Measure → Release
 
-1. **Share.** Have a prompt, skill or workflow that helps you? Share it in [`community/`](./community/README.md), with no benchmark score needed. The easiest way is the [Share a skill or workflow](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) form: paste it in, and a maintainer adds it and credits you.
+1. **Share.** Have a prompt, skill or workflow that helps you? Share it in [`community/`](./community/README.md), with no benchmark score needed. The easiest way is the [Share a skill](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) form: paste a link to your GitHub repo or drag in your files, and a maintainer adds it and credits you. Your name and picture are optional.
 2. **Measure.** Once a benchmark exists for its task and language, it is scored on the [leaderboard](https://buddhistai.github.io/buddhist-benchmarks/). See [how to submit](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/SUBMIT.md).
 3. **Release.** The best measured skill for each task and language is promoted to `skills/` and installs with the plugin (below).
 
@@ -12,7 +12,7 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 
 | You want to... | Go to |
 | --- | --- |
-| Share a prompt, skill or workflow you use | [`community/`](./community/README.md), or the [Share form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) (no git needed) |
+| Share a prompt, skill or workflow you use | [`community/`](./community/README.md), or the [Share form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml): a link or your files, no git needed |
 | Need AI for a task that nothing here covers | The [Request an AI solution form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
 | Check texts or outputs in a language you read | The [Volunteer as a language reader](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=reader.yml) form |
 | Improve a skill for your language | A challenger in `drafts/<task>-<language>/<your-variant>/` here (or in your own repo), then benchmark it |

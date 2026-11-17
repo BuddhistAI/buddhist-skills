@@ -6,6 +6,9 @@ language: pali           # source language, from languages.json
 target-language: english # only for tasks that produce another language; otherwise delete this line
 authors: Your Name (Your Organization)
 contact: "@your-github-name or a link"   # optional
+github: your-github-name  # optional: shows your GitHub picture in the homepage contributors list
+avatar: https://...       # optional: a picture to show when there is no github name
+license: MIT              # MIT, CC0-1.0 or CC-BY-4.0; say more in SOURCE.md
 version: 0.1.0           # bump it when you change the entry
 shared: 2026-11-17       # date you first shared it
 ---
