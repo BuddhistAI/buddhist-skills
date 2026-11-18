@@ -8,7 +8,7 @@
 - buddhist-benchmarks stays clean (short `result.json`, outputs, scores). Provenance records (`buddhistai/provenance@1`) live in the skill's own repo.
 - When you change something the handbook describes, update the handbook in the same pull request.
 - Any change users see follows EGM: see "Changes users see" below.
-- This repo: only the released skills (`skills/`: per task and language, the top performance and the best value skill), the router `ask-buddhistai` and shared resources (`shared/`); builds the plugin marketplace. Challengers live in each task's workshop repo; shared files and unmeasured skills live in buddhist-prompt-library. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
+- This repo: only the released skills (`skills/`: per task and language, the top performance and the best value skill), the router `ask-buddhistai` and shared resources (`shared/`); builds the plugin marketplace. Challengers live in each task's workshop repo; shared files and unmeasured skills live in buddhist-prompts. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
 
 ## Changes users see: follow EGM
 
@@ -31,6 +31,6 @@ EGM artifact directory: docs/designs
 - `skills/` only holds **promoted** skills. Do not edit a promoted `SKILL.md` directly; improvements start as a challenger (a variant in the task's workshop repo) and come back through promotion (see `CONTRIBUTING.md`).
 - Never hand-edit `.claude-plugin/marketplace.json` or `SKILLS.md`. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
 - When a new task appears in `skills/`, or a skill is removed, update `skills/ask-buddhistai/SKILL.md` so the router never points at a skill that does not exist.
-- Never add `community/` or `drafts/` content here (they are one-line pointers). Shared, unmeasured entries go to BuddhistAI/buddhist-prompt-library (Share form there); challengers go to the task's workshop repo.
+- Never add `community/` or `drafts/` content here (they are one-line pointers). Shared, unmeasured entries go to BuddhistAI/buddhist-prompts (Share form there); challengers go to the task's workshop repo.
 - Shared glossaries, transliteration tables, and style guides live only in `shared/`.
 - Design rationale: `docs/design.md`.

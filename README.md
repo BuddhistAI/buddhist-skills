@@ -1,8 +1,8 @@
 # ☸📊 Buddhist Skills
 
-> BuddhistAI helps people who work on Buddhist projects find the best AI solution for each task: the one with the best results, and the one with the best results for its cost. It also helps people who build AI solutions share them and have them tested. This repo holds only the released skills: for each task and language, the **top performance** and the **best value** skill. Shared files and skills with no score yet are in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library).
+> BuddhistAI helps people who work on Buddhist projects find the best AI solution for each task: the one with the best results, and the one with the best results for its cost. It also helps people who build AI solutions share them and have them tested. This repo holds only the released skills: for each task and language, the **top performance** and the **best value** skill. Shared files and skills with no score yet are in the [prompt library](https://github.com/BuddhistAI/buddhist-prompts).
 
-Open AI skills for Buddhist tasks: text work (table-of-contents extraction, cleanup, alignment, entity extraction, citation mapping, translation), images and visual AI, and personal AI setups (such as Claude files) for Buddhist study, teaching and practice. Built together by Buddhist organizations, translators, scholars and developers. Anyone can take part, and you can [share a skill or any file you give to AI](https://github.com/BuddhistAI/buddhist-prompt-library) today, with no benchmark score needed.
+Open AI skills for Buddhist tasks: text work (table-of-contents extraction, cleanup, alignment, entity extraction, citation mapping, translation), images and visual AI, and personal AI setups (such as Claude files) for Buddhist study, teaching and practice. Built together by Buddhist organizations, translators, scholars and developers. Anyone can take part, and you can [share a skill or any file you give to AI](https://github.com/BuddhistAI/buddhist-prompts) today, with no benchmark score needed.
 
 What each task is (definition, examples, hard cases) and the real workflows it comes from are in the [BuddhistAI knowledge base](https://buddhistai.github.io/knowledge-base/), together with our experiment reports. Anyone can edit it.
 
@@ -54,7 +54,7 @@ BuddhistAI/buddhist-benchmarks            BuddhistAI/buddhist-skills (this repo)
 
 - A **task** (for example `toc-extraction`) is defined once, in the benchmarks repo, with one input/output format and one scorer for every language.
 - A **skill** is a task for one language: `skills/<task>-<language>/`, for example `toc-extraction-tibetan`. Translation-type skills name both sides: `translation-tibetan-to-english`.
-- **Shared files and unmeasured skills** live in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library): Claude files, project instructions, style guides, glossaries, prompts, and skills before a benchmark exists for them. Not in the plugins.
+- **Shared files and unmeasured skills** live in the [prompt library](https://github.com/BuddhistAI/buddhist-prompts): Claude files, project instructions, style guides, glossaries, prompts, and skills before a benchmark exists for them. Not in the plugins.
 - **Challengers** live in their task's workshop repo (one repo per skill, for example [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan)), or in any fork or other organization's repo. They are scored on the benchmark; the winners are copied into `skills/`.
 
 The reasoning behind this layout is in [docs/design.md](./docs/design.md). How to contribute (Share → Measure → Release) is in [CONTRIBUTING.md](./CONTRIBUTING.md).

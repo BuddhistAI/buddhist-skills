@@ -16,4 +16,4 @@ Install one language with `claude plugin install buddhist-skills-<language>@budd
 
 ## Not in this list
 
-Shared files and skills with no score yet are in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library). Challengers are in each task's workshop repo, for example [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan).
+Shared files and skills with no score yet are in the [prompt library](https://github.com/BuddhistAI/buddhist-prompts). Challengers are in each task's workshop repo, for example [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan).

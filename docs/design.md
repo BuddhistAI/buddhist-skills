@@ -89,7 +89,7 @@ A pipeline of skills, such as cleanup → segmentation → translation → revie
 
 ### 12. Share before measuring: the prompt library
 
-Anyone can share a skill, or any file they give to AI (a Claude file, project instructions, a style guide, a glossary, a prompt), in the [Buddhist prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with a `CARD.md` (title, kind, topic, language, authors, license, version). No benchmark score is needed. Entries are never in a plugin. When a benchmark exists for a shared skill's task and language, it is added as a variant to the task's workshop repo and measured there. The three steps are Share → Measure → Release.
+Anyone can share a skill, or any file they give to AI (a Claude file, project instructions, a style guide, a glossary, a prompt), in the [Buddhist prompt library](https://github.com/BuddhistAI/buddhist-prompts), with a `CARD.md` (title, kind, topic, language, authors, license, version). No benchmark score is needed. Entries are never in a plugin. When a benchmark exists for a shared skill's task and language, it is added as a variant to the task's workshop repo and measured there. The three steps are Share → Measure → Release.
 
 Until 2026-11-18 shared entries were in `community/` here and challengers in `drafts/`. NT decided that this repo holds only the released skills (per task and language, the top performance and the best value skill), so a visitor never confuses measured and unmeasured work. `community/` moved to the prompt library and `drafts/` to the task workshop repos; both folders keep a one-line pointer.
 

@@ -9,7 +9,7 @@ body:
 
         Skills and files you give to AI (Claude files, project instructions, style guides, glossaries, prompts) are now shared in the Buddhist prompt library.
 
-        Open **[Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml)** there. Please do not submit this page.
+        Open **[Share your files](https://github.com/BuddhistAI/buddhist-prompts/issues/new?template=share.yml)** there. Please do not submit this page.
   - type: textarea
     id: notes
     attributes:

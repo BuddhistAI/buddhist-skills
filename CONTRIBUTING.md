@@ -4,7 +4,7 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 
 ## Three steps: Share → Measure → Release
 
-1. **Share.** Have a skill, or any file you give to AI (a Claude file, project instructions, a style guide, a glossary, a prompt)? Share it in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with no score needed. The easiest way is the [Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml) form: paste a link or drag in your files, and a maintainer adds it and credits you. You need a free GitHub account. Your name and picture are optional.
+1. **Share.** Have a skill, or any file you give to AI (a Claude file, project instructions, a style guide, a glossary, a prompt)? Share it in the [prompt library](https://github.com/BuddhistAI/buddhist-prompts), with no score needed. The easiest way is the [Share your files](https://github.com/BuddhistAI/buddhist-prompts/issues/new?template=share.yml) form: paste a link or drag in your files, and a maintainer adds it and credits you. You need a free GitHub account. Your name and picture are optional.
 2. **Measure.** Once a benchmark exists for its task and language, it is scored on the [leaderboard](https://buddhistai.github.io/buddhist-benchmarks/). See [how to submit](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/SUBMIT.md).
 3. **Release.** For each task and language, the top performance and the best value skill are promoted to `skills/` and installs with the plugin (below).
 
@@ -12,7 +12,7 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 
 | You want to... | Go to |
 | --- | --- |
-| Share a skill or any file you give to AI | The [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with the [Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml) form: a link or your files, no git needed |
+| Share a skill or any file you give to AI | The [prompt library](https://github.com/BuddhistAI/buddhist-prompts), with the [Share your files](https://github.com/BuddhistAI/buddhist-prompts/issues/new?template=share.yml) form: a link or your files, no git needed |
 | Need AI for a task that nothing here covers | The [Request an AI solution form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
 | Check texts or outputs in a language you read | The [Volunteer as a language reader](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=reader.yml) form |
 | Improve a skill for your language | A challenger in the task's workshop repo as `variants/<your-variant>/` (or in your own repo), then benchmark it |
@@ -30,7 +30,7 @@ Everything shared or requested is tracked on the [Skills board](https://github.c
 
 - You do not need to know git. The issue forms above, or a post in [Discussions](https://github.com/orgs/BuddhistAI/discussions), are enough; a maintainer does the rest.
 - If you do open a pull request, a small or unfinished one is fine. Say what you are unsure about and we will help.
-- Templates to copy: [`templates/skill/SKILL.md`](./templates/skill/SKILL.md); for a shared entry, the [prompt library templates](https://github.com/BuddhistAI/buddhist-prompt-library/tree/main/templates); for a workshop repo (all variants, runs and [provenance records](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of one skill), the template repo [template-skill-repo](https://github.com/BuddhistAI/template-skill-repo).
+- Templates to copy: [`templates/skill/SKILL.md`](./templates/skill/SKILL.md); for a shared entry, the [prompt library templates](https://github.com/BuddhistAI/buddhist-prompts/tree/main/templates); for a workshop repo (all variants, runs and [provenance records](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of one skill), the template repo [template-skill-repo](https://github.com/BuddhistAI/template-skill-repo).
 - Step-by-step tutorials: [Learn by building](https://buddhistai.github.io/knowledge-base/learn/). Who decides what, and how organizations get their own team: [Governance](https://buddhistai.github.io/knowledge-base/governance.html).
 - Everyone who contributes is credited by name: in the card or skill metadata, on the leaderboard, and in the changelog. Reviewers and language readers too.
 - Please read the [code of conduct](./CODE_OF_CONDUCT.md).
