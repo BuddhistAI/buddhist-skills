@@ -1,89 +1,17 @@
-name: Share a skill
-description: Share a skill, prompt, workflow or Claude file. Paste a link or upload your files. No score, git or code needed.
+name: Share your files (moved)
+description: This form moved to the Buddhist prompt library. Open the link inside.
 title: "Share: "
-labels: [community-share]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for sharing! There are two ways:
-        1. **Paste a link** to your GitHub repo or folder, or
-        2. **Upload your files**: drag them into the box below.
+        ## This form has moved
 
-        A maintainer adds your entry to [`community/`](https://github.com/BuddhistAI/buddhist-skills/tree/main/community) and credits you. Your name and picture appear on the [contributors list](https://buddhistai.github.io/#people). Only share material you are free to share (see the [code of conduct](https://github.com/BuddhistAI/buddhist-skills/blob/main/CODE_OF_CONDUCT.md)).
-  - type: input
-    id: title
-    attributes:
-      label: Name of your skill
-      description: A short name people will recognise.
-      placeholder: Translation style of Khenpo X
-    validations: {required: true}
-  - type: dropdown
-    id: kind
-    attributes:
-      label: What is it?
-      options:
-        - A skill (SKILL.md)
-        - A prompt
-        - A workflow (several steps)
-        - A personal setup (a Claude file, style guide or project instructions)
-        - Other
-    validations: {required: true}
-  - type: input
-    id: language
-    attributes:
-      label: Language
-      description: One language per entry. For translation, give both.
-      placeholder: Tibetan → English
-    validations: {required: true}
-  - type: textarea
-    id: what
-    attributes:
-      label: What does it do, and who is it for?
-      placeholder: It describes how my teacher speaks, so the AI keeps his style when I translate his talks.
-    validations: {required: true}
-  - type: input
-    id: link
-    attributes:
-      label: "Way 1: link to your GitHub repo or folder"
-      description: Leave empty if you upload files below.
-      placeholder: https://github.com/you/your-skill
-  - type: textarea
-    id: files
-    attributes:
-      label: "Way 2: your files"
-      description: Drag and drop your files here (.md, .txt, .zip, .pdf, .docx). If GitHub refuses a file, put it in a .zip. You can also paste the text.
+        Skills and files you give to AI (Claude files, project instructions, style guides, glossaries, prompts) are now shared in the Buddhist prompt library.
+
+        Open **[Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml)** there. Please do not submit this page.
   - type: textarea
     id: notes
     attributes:
       label: Anything else? (optional)
-      description: A short example, the AI models you used it with, or what it gets wrong.
-  - type: input
-    id: credit
-    attributes:
-      label: Your name (optional)
-      description: How we credit you. Leave empty and we use your GitHub name.
-      placeholder: Your Name (Your Organization)
-  - type: textarea
-    id: avatar
-    attributes:
-      label: Your picture (optional)
-      description: Drop a photo or logo here, or paste a link to one. Leave empty and we use your GitHub picture.
-  - type: dropdown
-    id: license
-    attributes:
-      label: License
-      description: How others may use it. MIT and CC0 let anyone use it freely.
-      options:
-        - MIT (anyone may use it; keep my name)
-        - CC0 (public domain)
-        - CC BY 4.0 (anyone may use it; credit me)
-        - Other (say which in "Anything else?")
-    validations: {required: true}
-  - type: checkboxes
-    id: free
-    attributes:
-      label: Permission
-      options:
-        - label: I made this or I am free to share it.
-          required: true
+      description: Leave this empty and use the link above.

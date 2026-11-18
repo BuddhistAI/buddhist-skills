@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate .claude-plugin/marketplace.json and SKILLS.md from skills/ and community/.
+"""Regenerate .claude-plugin/marketplace.json and SKILLS.md from skills/.
 
 Run from anywhere: python3 scripts/build.py
 Never edit those two files by hand.
@@ -8,7 +8,7 @@ import json
 import sys
 
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
-from skills_lib import ROOT, collect_community, collect_skills  # noqa: E402
+from skills_lib import ROOT, collect_skills  # noqa: E402
 
 KEYWORDS = ["buddhism", "buddhist-ai"]
 
@@ -69,25 +69,13 @@ def build():
     if not by_lang:
         lines += ["## Language skills", "", "_None promoted yet._", ""]
 
-    community = collect_community()
     lines += [
-        "## Community (not yet measured)",
+        "## Not in this list",
         "",
-        "Shared by contributors and not benchmarked yet, so not in the plugins. Copy a folder to use it. "
-        "How to share yours: [community/README.md](./community/README.md).",
-        "",
+        "Shared files and skills with no score yet are in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library). "
+        "Challengers are in each task's workshop repo, for example "
+        "[toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan).",
     ]
-    if community:
-        lines += ["| Entry | Kind | Language | Task | By | Version |", "| --- | --- | --- | --- | --- | --- |"]
-        for e in community:
-            c = e["card"] or {}
-            lang = (e["language"] or "any").replace("-", " ").title()
-            if e["target"]:
-                lang += " → " + e["target"].replace("-", " ").title()
-            title = c.get("title") or e["name"]
-            lines.append(f"| [{title}](./{e['path']}/CARD.md) | {c.get('kind', '')} | {lang} | {e['task']} | {c.get('authors', '')} | {c.get('version', '')} |")
-    else:
-        lines.append("_Nothing shared yet. Be the first!_")
     lines.append("")
     return json.dumps(marketplace, indent=2, ensure_ascii=False) + "\n", "\n".join(lines)
 

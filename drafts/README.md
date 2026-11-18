@@ -1,9 +1,8 @@
-# Drafts
+# Moved
 
-Challengers for a task and language that has a benchmark, not shipped in any plugin. Nothing to measure it on yet? Share it in [`community/`](../community/README.md) instead.
+Challengers now live in their task's workshop repo, as `variants/<name>/` (moved 2026-11-18):
 
-Layout: `drafts/<task>-<language>/<org>-<short-name>/SKILL.md`, for example `drafts/toc-extraction-tibetan/webuddhist-v1/SKILL.md`.
+- TOC extraction, Tibetan: [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan/tree/main/variants) (the GEPA draft is `variants/gepa-v1`)
+- Translation, Tibetan to French: [translation-tibetan-to-french](https://github.com/BuddhistAI/translation-tibetan-to-french/tree/main/variants) (the two Drupchen-method drafts)
 
-Every draft's frontmatter has `metadata.variant` (the folder name) and `metadata.version` (semver, see [design decision 10](../docs/design.md)). Bump the version whenever you change the draft, and cite variant and version in benchmark runs.
-
-Each draft should have a short `VARIANT.md` next to its `SKILL.md`: who made it, what is different from the current skill, and which model(s) it was tested with. Score it in [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks) before proposing promotion (see `CONTRIBUTING.md`).
+See [CONTRIBUTING.md](../CONTRIBUTING.md#from-challenger-to-promoted-skill).

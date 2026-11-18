@@ -4,18 +4,18 @@ BuddhistAI is open to everyone: Buddhist organizations, translators, teachers, s
 
 ## Three steps: Share → Measure → Release
 
-1. **Share.** Have a prompt, skill or workflow that helps you? Share it in [`community/`](./community/README.md), with no benchmark score needed. The easiest way is the [Share a skill](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml) form: paste a link to your GitHub repo or drag in your files, and a maintainer adds it and credits you. Your name and picture are optional.
+1. **Share.** Have a skill, or any file you give to AI (a Claude file, project instructions, a style guide, a glossary, a prompt)? Share it in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with no score needed. The easiest way is the [Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml) form: paste a link or drag in your files, and a maintainer adds it and credits you. You need a free GitHub account. Your name and picture are optional.
 2. **Measure.** Once a benchmark exists for its task and language, it is scored on the [leaderboard](https://buddhistai.github.io/buddhist-benchmarks/). See [how to submit](https://github.com/BuddhistAI/buddhist-benchmarks/blob/main/SUBMIT.md).
-3. **Release.** The best measured skill for each task and language is promoted to `skills/` and installs with the plugin (below).
+3. **Release.** For each task and language, the top performance and the best value skill are promoted to `skills/` and installs with the plugin (below).
 
 ## Where to send what
 
 | You want to... | Go to |
 | --- | --- |
-| Share a prompt, skill or workflow you use | [`community/`](./community/README.md), or the [Share form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=share.yml): a link or your files, no git needed |
+| Share a skill or any file you give to AI | The [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with the [Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml) form: a link or your files, no git needed |
 | Need AI for a task that nothing here covers | The [Request an AI solution form](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml) |
 | Check texts or outputs in a language you read | The [Volunteer as a language reader](https://github.com/BuddhistAI/buddhist-skills/issues/new?template=reader.yml) form |
-| Improve a skill for your language | A challenger in `drafts/<task>-<language>/<your-variant>/` here (or in your own repo), then benchmark it |
+| Improve a skill for your language | A challenger in the task's workshop repo as `variants/<your-variant>/` (or in your own repo), then benchmark it |
 | Review a benchmark's answers as an expert | The [Review a benchmark form](https://github.com/BuddhistAI/buddhist-benchmarks/issues/new?template=expert-review.yml) |
 | Pay for evaluations with compute or API credits | The [Donate compute or API credits form](https://github.com/BuddhistAI/buddhist-benchmarks/issues/new?template=donate-compute.yml) |
 | Add test data for your language, or a new task | [buddhist-benchmarks](https://github.com/BuddhistAI/buddhist-benchmarks) |
@@ -30,7 +30,7 @@ Everything shared or requested is tracked on the [Skills board](https://github.c
 
 - You do not need to know git. The issue forms above, or a post in [Discussions](https://github.com/orgs/BuddhistAI/discussions), are enough; a maintainer does the rest.
 - If you do open a pull request, a small or unfinished one is fine. Say what you are unsure about and we will help.
-- Templates to copy: [`templates/CARD.md`](./templates/CARD.md), [`templates/skill/SKILL.md`](./templates/skill/SKILL.md), [`templates/workflow/WORKFLOW.md`](./templates/workflow/WORKFLOW.md), and for a workshop repo (all variants, runs and [provenance records](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of one skill) [`templates/workshop/`](./templates/workshop/).
+- Templates to copy: [`templates/skill/SKILL.md`](./templates/skill/SKILL.md); for a shared entry, the [prompt library templates](https://github.com/BuddhistAI/buddhist-prompt-library/tree/main/templates); for a workshop repo (all variants, runs and [provenance records](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of one skill), the template repo [template-skill-repo](https://github.com/BuddhistAI/template-skill-repo).
 - Step-by-step tutorials: [Learn by building](https://buddhistai.github.io/knowledge-base/learn/). Who decides what, and how organizations get their own team: [Governance](https://buddhistai.github.io/knowledge-base/governance.html).
 - Everyone who contributes is credited by name: in the card or skill metadata, on the leaderboard, and in the changelog. Reviewers and language readers too.
 - Please read the [code of conduct](./CODE_OF_CONDUCT.md).
@@ -45,7 +45,7 @@ Everything shared or requested is tracked on the [Skills board](https://github.c
 
 ## From challenger to promoted skill
 
-1. Put your challenger in `drafts/<task>-<language>/<org>-<short-name>/SKILL.md` (or in your own repo). Its frontmatter `name` should already be the final skill name, for example `toc-extraction-tibetan`, and it needs `metadata.variant` and `metadata.version` (semver). Bump the version on every change.
+1. Put your challenger in the task's workshop repo as `variants/<org>-<short-name>/SKILL.md`, for example [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan/tree/main/variants) (or in your own repo). If the task has no workshop repo yet, a maintainer makes one from [template-skill-repo](https://github.com/BuddhistAI/template-skill-repo). Its frontmatter `name` should already be the final skill name, for example `toc-extraction-tibetan`, and it needs `metadata.variant` and `metadata.version` (semver). Bump the version on every change.
 2. Run it on the task's benchmark set for your language and add your row to the leaderboard in buddhist-benchmarks, citing the exact commit of your skill. Keep a [provenance record](https://buddhistai.github.io/knowledge-base/handbook/provenance.html) of each run in the repo where the skill is built (not in buddhist-benchmarks).
 3. If it beats the current skill, open a PR here that copies it into `skills/<task>-<language>/` with this metadata:
 
@@ -60,7 +60,7 @@ Everything shared or requested is tracked on the [Skills board](https://github.c
      benchmark: toc-extraction/bo@1.0.0   # task / data code @ benchmark version (semver)
      score: "0.91 F1"                     # as on the leaderboard
      version: 1.0.0                       # this skill's version
-     source: BuddhistAI/buddhist-skills@3f2a1c9:drafts/toc-extraction-tibetan/webuddhist-v1
+     source: BuddhistAI/toc-extraction-tibetan@3f2a1c9:variants/webuddhist-v1
      promoted: 2026-11-13
    ---
    ```
@@ -78,7 +78,7 @@ Refer to shared files by their path in this repo, for example `shared/glossaries
 
 ## Credit
 
-Put every author in the frontmatter: `authors` in a community `CARD.md`, `metadata.authors` in a draft or promoted `SKILL.md` (for example `Jane Doe (Example Sangha); Tashi (Example Institute)`). Name the people and organizations whose work a skill builds on in its card or `VARIANT.md`, with their license.
+Put every author in the frontmatter: `authors` in a prompt library `CARD.md`, `metadata.authors` in a variant or promoted `SKILL.md` (for example `Jane Doe (Example Sangha); Tashi (Example Institute)`). Name the people and organizations whose work a skill builds on in its card or `VARIANT.md`, with their license.
 
 ## Writing style
 

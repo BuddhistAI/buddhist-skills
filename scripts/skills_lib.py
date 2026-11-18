@@ -5,8 +5,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = ROOT / "skills"
-COMMUNITY = ROOT / "community"
-COMMUNITY_FILES = ("SKILL.md", "WORKFLOW.md", "PROMPT.md")
 
 
 def load_languages():
@@ -71,25 +69,3 @@ def collect_skills():
         })
     return skills, languages
 
-
-def collect_community():
-    """Shared entries: community/<task>-<language>/<author>-<name>/CARD.md. Not shipped in plugins."""
-    languages = load_languages()
-    entries = []
-    for group in sorted(p for p in COMMUNITY.glob("*") if p.is_dir()):
-        task, lang, target = split_name(group.name, languages)
-        for entry in sorted(p for p in group.glob("*") if p.is_dir()):
-            card = entry / "CARD.md"
-            top, _ = parse_frontmatter(card) if card.exists() else (None, None)
-            entries.append({
-                "group": group.name,
-                "name": entry.name,
-                "path": f"community/{group.name}/{entry.name}",
-                "card": top,
-                "has_card": card.exists(),
-                "files": [f for f in COMMUNITY_FILES if (entry / f).exists()],
-                "task": task if lang else group.name,
-                "language": lang,
-                "target": target,
-            })
-    return entries

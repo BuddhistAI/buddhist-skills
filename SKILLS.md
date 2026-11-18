@@ -14,10 +14,6 @@ Install one language with `claude plugin install buddhist-skills-<language>@budd
 | --- | --- | --- | --- | --- |
 | [toc-extraction-tibetan](./skills/toc-extraction-tibetan/SKILL.md) | toc-extraction | toc-extraction/bo@1.0.0 | 0.893 structure_f1 (mean of Claude Haiku 5.5 0.823 and Sonnet 5.5 0.962) | 1.0.0 |
 
-## Community (not yet measured)
+## Not in this list
 
-Shared by contributors and not benchmarked yet, so not in the plugins. Copy a folder to use it. How to share yours: [community/README.md](./community/README.md).
-
-| Entry | Kind | Language | Task | By | Version |
-| --- | --- | --- | --- | --- | --- |
-| [my-dharma.md (Shoukei Matsumoto's version)](./community/personal-ai-setup-english/shoukei-matsumoto-my-dharma/CARD.md) | personal | English | personal-ai-setup | Shoukei Matsumoto | 1.0.0 |
+Shared files and skills with no score yet are in the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library). Challengers are in each task's workshop repo, for example [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan).

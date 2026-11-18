@@ -2,7 +2,7 @@
 
 ## What
 
-<!-- What does this add or change? (community entry, draft, promotion, glossary, docs...) -->
+<!-- What does this add or change? (promotion, glossary, router, docs...) -->
 
 ## Language
 

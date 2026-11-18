@@ -11,7 +11,7 @@ Many Buddhist organizations need the same kinds of work done on texts in many la
 ### 1. Two hub repos, not one repo per skill
 
 - **buddhist-benchmarks** defines each task once and holds test data, scorers, and leaderboards.
-- **buddhist-skills** holds the skills: the promoted winners in `skills/` and challengers in `drafts/`.
+- **buddhist-skills** holds the skills: only the promoted winners in `skills/`. Challengers live in each task's workshop repo.
 
 One repo per skill would mean dozens of repos with duplicated scoring code, and no single place to compare languages on the same task. Two hubs keep the task definition and the scorer shared across languages, while skills and data stay separate so a benchmark cannot quietly change to fit a skill.
 
@@ -87,11 +87,13 @@ A pipeline of skills, such as cleanup → segmentation → translation → revie
 
 **Why:** the best skill per stage is not always the best workflow, because errors compound; stage scores then show where a workflow loses points.
 
-### 12. Share before measuring: `community/`
+### 12. Share before measuring: the prompt library
 
-Anyone can share a skill, prompt or workflow in `community/<task>-<language>/<author>-<name>/`, with a `CARD.md` (title, kind, language, authors, version) and the skill, workflow or prompt itself. No benchmark score is needed. `build.py` lists entries in SKILLS.md under *Community (not yet measured)*; they are never in a plugin. The task part of the name is free, but should be a task ID when one fits. When a benchmark exists for its task and language, an entry moves to `drafts/` as a challenger. The three steps are Share → Measure → Release.
+Anyone can share a skill, or any file they give to AI (a Claude file, project instructions, a style guide, a glossary, a prompt), in the [Buddhist prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with a `CARD.md` (title, kind, topic, language, authors, license, version). No benchmark score is needed. Entries are never in a plugin. When a benchmark exists for a shared skill's task and language, it is added as a variant to the task's workshop repo and measured there. The three steps are Share → Measure → Release.
 
-**Why:** most tasks and languages have no benchmark yet, so a measure-first rule would turn away most contributors. Shared entries also show which benchmarks to build next. Keeping them out of the plugins keeps the promise that every installed skill is the measured best.
+Until 2026-11-18 shared entries were in `community/` here and challengers in `drafts/`. NT decided that this repo holds only the released skills (per task and language, the top performance and the best value skill), so a visitor never confuses measured and unmeasured work. `community/` moved to the prompt library and `drafts/` to the task workshop repos; both folders keep a one-line pointer.
+
+**Why:** most tasks and languages have no benchmark yet, so a measure-first rule would turn away most contributors, and most people share instructions and style files, not skills. Shared entries also show which benchmarks to build next. Keeping them out of this repo and out of the plugins keeps the promise that every installed skill is the measured best.
 
 ## Tasks anticipated
 

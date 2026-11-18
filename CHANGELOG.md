@@ -2,6 +2,13 @@
 
 Newest first. One entry per promotion, retirement, or change to `shared/`.
 
+## 2026-11-18: only released skills here
+
+- This repo now holds only the released skills (per task and language, the top performance and the best value skill), the router and `shared/`.
+- `community/` moved to the new [Buddhist prompt library](https://github.com/BuddhistAI/buddhist-prompt-library), with the Share form (now "Share your files"). `my-dharma.md` by Shoukei Matsumoto moved unchanged.
+- `drafts/` moved to the task workshop repos: `toc-extraction-tibetan` (`variants/gepa-v1`) and the new `translation-tibetan-to-french` (Drupchen-method variants).
+- Both folders keep a one-line pointer, and the old Share form link shows where the form moved. `ask-buddhistai` points to the prompt library.
+
 ## 2026-11-17: first community entry
 
 - `community/personal-ai-setup-english/shoukei-matsumoto-my-dharma/`: my-dharma.md by Shoukei Matsumoto, a personal AI file (CC0), copied whole. New community kind `personal` for personal AI setups that keep their own file name.

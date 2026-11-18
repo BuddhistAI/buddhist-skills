@@ -8,7 +8,7 @@
 - buddhist-benchmarks stays clean (short `result.json`, outputs, scores). Provenance records (`buddhistai/provenance@1`) live in the skill's own repo.
 - When you change something the handbook describes, update the handbook in the same pull request.
 - Any change users see follows EGM: see "Changes users see" below.
-- This repo: the released skills (`skills/`), challengers (`drafts/`), community entries and shared resources; builds the plugin marketplace. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
+- This repo: only the released skills (`skills/`: per task and language, the top performance and the best value skill), the router `ask-buddhistai` and shared resources (`shared/`); builds the plugin marketplace. Challengers live in each task's workshop repo; shared files and unmeasured skills live in buddhist-prompt-library. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
 
 ## Changes users see: follow EGM
 
@@ -28,9 +28,9 @@ EGM artifact directory: docs/designs
 ## This repo
 
 - Skills are per language: `skills/<task>-<language>/` (or `<task>-<source>-to-<target>/`). Never mix languages in one skill. Language-neutral skills have no suffix. Names and codes come from `languages.json`; task IDs come from buddhist-benchmarks `tasks/index.json`.
-- `skills/` only holds **promoted** skills. Do not edit a promoted `SKILL.md` directly; improvements start as a challenger in `drafts/` and come back through promotion (see `CONTRIBUTING.md`).
+- `skills/` only holds **promoted** skills. Do not edit a promoted `SKILL.md` directly; improvements start as a challenger (a variant in the task's workshop repo) and come back through promotion (see `CONTRIBUTING.md`).
 - Never hand-edit `.claude-plugin/marketplace.json` or `SKILLS.md`. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
 - When a new task appears in `skills/`, or a skill is removed, update `skills/ask-buddhistai/SKILL.md` so the router never points at a skill that does not exist.
-- `community/<task>-<language>/<author>-<name>/` holds shared, unmeasured entries (CARD.md + SKILL.md/WORKFLOW.md/PROMPT.md; templates in `templates/`). They are listed in SKILLS.md but never in a plugin. When turning a Share issue into an entry, credit the author in `authors`.
+- Never add `community/` or `drafts/` content here (they are one-line pointers). Shared, unmeasured entries go to BuddhistAI/buddhist-prompt-library (Share form there); challengers go to the task's workshop repo.
 - Shared glossaries, transliteration tables, and style guides live only in `shared/`.
 - Design rationale: `docs/design.md`.

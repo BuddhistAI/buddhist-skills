@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Share your files
+    url: https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml
+    about: Share a skill or any file you give to AI (Claude file, project instructions, style guide, glossary, prompt) in the Buddhist prompt library.
   - name: Ask a question or discuss an idea
     url: https://github.com/orgs/BuddhistAI/discussions
     about: Ask which AI works best for your task, share what you made, or talk about your language. Start with the welcome post (discussion 1).

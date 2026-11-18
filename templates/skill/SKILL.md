@@ -9,7 +9,7 @@ metadata:
 
 <!--
 The name above is <task>-<language> (or <task>-<source>-to-<target>), the same as the
-folder one level up in community/. Write the instructions below as you would explain the
+folder one level up (in a workshop repo's variants/, the final skill name). Write the instructions below as you would explain the
 job to a careful new assistant. Delete these comments when you are done.
 -->
 
